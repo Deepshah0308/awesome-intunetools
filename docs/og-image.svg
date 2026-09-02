@@ -1,19 +1,25 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
-  <rect width="1200" height="630" fill="#141B26"/>
-  <g transform="translate(80,92)" fill="none" stroke="#93B4E4" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
-    <path d="M36 4 68 22.5v37L36 78 4 59.5v-37z"/>
-    <path d="M24 30h24M24 41h24M24 52h14"/>
+  <rect width="1200" height="630" fill="#1F1633"/>
+  <g fill="#ffffff" opacity=".5">
+    <circle cx="150" cy="120" r="1.6"/><circle cx="420" cy="86" r="1.2"/>
+    <circle cx="700" cy="140" r="1.8"/><circle cx="960" cy="96" r="1.3"/>
+    <circle cx="1090" cy="210" r="1.6"/><circle cx="260" cy="520" r="1.4"/>
+    <circle cx="880" cy="470" r="1.7"/><circle cx="1130" cy="540" r="1.2"/>
+    <circle cx="60" cy="330" r="1.3"/><circle cx="540" cy="580" r="1.5"/>
   </g>
-  <g font-family="Space Grotesk, Helvetica, Arial, sans-serif" fill="#FFFFFF">
-    <text x="80" y="290" font-size="76" font-weight="600" letter-spacing="-1.5">Awesome Intune Tools</text>
+  <g transform="translate(80,74)" fill="none" stroke="#C2EF4E" stroke-width="4.5" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M28 3 52 17v28L28 59 4 45V17z"/>
+    <path d="M18 24h20M18 31h20M18 38h11"/>
   </g>
-  <g font-family="IBM Plex Sans, Helvetica, Arial, sans-serif">
-    <text x="80" y="352" font-size="31" fill="#A9B6C8">A curated, searchable directory of community tools</text>
-    <text x="80" y="396" font-size="31" fill="#A9B6C8">for Microsoft Intune administrators.</text>
-    <text x="80" y="500" font-size="24" fill="#7E8DA3">Troubleshooting   Packaging   Autopilot   Reporting   Security   macOS</text>
+  <text x="152" y="122" font-family="Space Grotesk, Helvetica, Arial, sans-serif" font-size="30" font-weight="700" fill="#ffffff">Awesome Intune Tools</text>
+  <g font-family="Space Grotesk, Helvetica, Arial, sans-serif" font-size="78" font-weight="700" fill="#ffffff">
+    <text x="80" y="290">Every Intune tool worth</text>
+    <text x="80" y="384">knowing, in</text>
   </g>
-  <rect x="80" y="536" width="66" height="3" fill="#93B4E4"/>
-  <g font-family="IBM Plex Sans, Helvetica, Arial, sans-serif">
-    <text x="80" y="580" font-size="23" fill="#7E8DA3">deepshah0308.github.io/awesome-intunetools</text>
+  <rect x="428" y="322" width="284" height="82" rx="4" fill="#C2EF4E"/>
+  <text x="450" y="384" font-family="Space Grotesk, Helvetica, Arial, sans-serif" font-size="78" font-weight="700" fill="#1F1633">one place</text>
+  <text x="80" y="470" font-family="Rubik, Helvetica, Arial, sans-serif" font-size="27" fill="rgba(255,255,255,0.72)">122 community-built tools, scripts and utilities. Reviewed by hand.</text>
+  <g font-family="Rubik, Helvetica, Arial, sans-serif" font-size="21" fill="rgba(255,255,255,0.5)">
+    <text x="80" y="556">deepshah0308.github.io/awesome-intunetools</text>
   </g>
 </svg>
