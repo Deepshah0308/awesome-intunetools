@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Report a broken link
+    url: https://github.com/Deepshah0308/awesome-intunetools/issues/new
+    about: Tell us about an entry whose link no longer resolves.
+  - name: Sponsor the project
+    url: https://deepshah0308.github.io/awesome-intunetools/sponsor.html
+    about: Support the review and upkeep work behind this directory.

@@ -1,15 +1,19 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
-<rect width="1200" height="630" fill="#101A2E"/>
-<rect y="614" width="1200" height="16" fill="#2D5BFF"/>
-<g font-family="Space Grotesk, Helvetica, Arial, sans-serif" fill="#FFFFFF">
-<text x="80" y="228" font-size="82" font-weight="700">Awesome Intune Tools</text>
-</g>
-<g font-family="IBM Plex Sans, Helvetica, Arial, sans-serif">
-<text x="80" y="300" font-size="34" fill="#B9C6DE">A curated, searchable directory of community tools</text>
-<text x="80" y="348" font-size="34" fill="#B9C6DE">for Microsoft Intune administrators.</text>
-<text x="80" y="470" font-size="27" fill="#8FB0FF">Troubleshooting - Packaging - Autopilot - Reporting - Security - macOS</text>
-<text x="80" y="536" font-size="25" fill="#7A89A8">deepshah0308.github.io/awesome-intunetools</text>
-</g>
-<rect x="1010" y="150" width="110" height="110" fill="none" stroke="#2D5BFF" stroke-width="9"/>
-<circle cx="1065" cy="205" r="22" fill="#00A0A8"/>
+  <rect width="1200" height="630" fill="#141B26"/>
+  <g transform="translate(80,92)" fill="none" stroke="#93B4E4" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M36 4 68 22.5v37L36 78 4 59.5v-37z"/>
+    <path d="M24 30h24M24 41h24M24 52h14"/>
+  </g>
+  <g font-family="Space Grotesk, Helvetica, Arial, sans-serif" fill="#FFFFFF">
+    <text x="80" y="290" font-size="76" font-weight="600" letter-spacing="-1.5">Awesome Intune Tools</text>
+  </g>
+  <g font-family="IBM Plex Sans, Helvetica, Arial, sans-serif">
+    <text x="80" y="352" font-size="31" fill="#A9B6C8">A curated, searchable directory of community tools</text>
+    <text x="80" y="396" font-size="31" fill="#A9B6C8">for Microsoft Intune administrators.</text>
+    <text x="80" y="500" font-size="24" fill="#7E8DA3">Troubleshooting   Packaging   Autopilot   Reporting   Security   macOS</text>
+  </g>
+  <rect x="80" y="536" width="66" height="3" fill="#93B4E4"/>
+  <g font-family="IBM Plex Sans, Helvetica, Arial, sans-serif">
+    <text x="80" y="580" font-size="23" fill="#7E8DA3">deepshah0308.github.io/awesome-intunetools</text>
+  </g>
 </svg>
