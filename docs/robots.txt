@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://deepshah0308.github.io/awesome-intunetools/sitemap.xml

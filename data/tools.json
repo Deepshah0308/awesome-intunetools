@@ -1,0 +1,1052 @@
+{
+  "categories": [
+    {
+      "id": "device-management",
+      "name": "Device Management",
+      "blurb": "Consoles, bulk operations, and lifecycle tooling for the devices in your tenant."
+    },
+    {
+      "id": "troubleshooting",
+      "name": "Troubleshooting & Debugging",
+      "blurb": "Log readers, diagnostics collectors, and device-level investigation tools."
+    },
+    {
+      "id": "packaging",
+      "name": "App Packaging & Deployment",
+      "blurb": "Win32 packaging, Winget pipelines, and app delivery automation."
+    },
+    {
+      "id": "autopilot",
+      "name": "Autopilot & Provisioning",
+      "blurb": "Hardware hashes, enrollment, imaging media, and provisioning workflows."
+    },
+    {
+      "id": "baselines",
+      "name": "Baselines & Configuration as Code",
+      "blurb": "Ready-to-import baselines and declarative tenant configuration."
+    },
+    {
+      "id": "apple",
+      "name": "macOS & Apple",
+      "blurb": "Tooling for Mac, iOS, and iPadOS fleets managed through Intune."
+    },
+    {
+      "id": "android",
+      "name": "Android & Cross-platform",
+      "blurb": "Android Enterprise, Linux, and multi-platform management."
+    },
+    {
+      "id": "graph",
+      "name": "Graph API & PowerShell",
+      "blurb": "SDKs, sample libraries, and scripting interfaces for the Intune Graph API."
+    },
+    {
+      "id": "reporting",
+      "name": "Reporting & Analytics",
+      "blurb": "Dashboards, compliance exports, and executive-facing reporting."
+    },
+    {
+      "id": "remediation",
+      "name": "Remediations & Scripts",
+      "blurb": "Detection and remediation script libraries plus authoring tools."
+    },
+    {
+      "id": "backup",
+      "name": "Backup, Restore & Documentation",
+      "blurb": "Tenant backup, drift detection, migration, and auto-generated documentation."
+    },
+    {
+      "id": "security",
+      "name": "Security & Hardening",
+      "blurb": "Hardening baselines, LAPS, BitLocker, and security posture assessment."
+    },
+    {
+      "id": "automation",
+      "name": "Automation & Assignments",
+      "blurb": "CI/CD, assignment auditing, and workflow automation."
+    },
+    {
+      "id": "misc",
+      "name": "Utilities & Discovery",
+      "blurb": "Generators, navigation helpers, and directories of further tooling."
+    }
+  ],
+  "tools": [
+    {
+      "name": "Intune Maps",
+      "author": "Shehan Perera",
+      "url": "https://intunemaps.com/",
+      "category": "device-management",
+      "kind": "web",
+      "desc": "Visual map of Intune blades and documentation to speed up portal navigation."
+    },
+    {
+      "name": "Rockn Roll Tool",
+      "author": "Nicklas Ahlberg",
+      "url": "https://www.rockenroll.tech/",
+      "category": "device-management",
+      "kind": "web",
+      "desc": "Management tools for Intune environments covering policies, apps, Autopilot, and helpdesk utilities."
+    },
+    {
+      "name": "Rock My Printers",
+      "author": "Nicklas Ahlberg",
+      "url": "https://www.rockenroll.tech/2023/03/14/rock-my-printers/",
+      "category": "device-management",
+      "kind": "guide",
+      "desc": "Simplifies printer management across Intune-managed devices."
+    },
+    {
+      "name": "Intune Management",
+      "author": "Mikael Karlsson",
+      "url": "https://github.com/Micke-K/IntuneManagement",
+      "category": "device-management",
+      "kind": "repo",
+      "desc": "PowerShell and WPF GUI to copy, export, import, delete, document, and compare Intune policies and profiles, with ADMX ingestion and cross-tenant migration."
+    },
+    {
+      "name": "Device Offboarding Manager",
+      "author": "Ugur Koc",
+      "url": "https://github.com/ugurkocde/DeviceOffboardingManager",
+      "category": "device-management",
+      "kind": "repo",
+      "desc": "PowerShell GUI for bulk offboarding devices from Intune, Autopilot, and Entra ID with dashboards, stale device tracking, and BitLocker key handling."
+    },
+    {
+      "name": "IntuneStuff Management Tool",
+      "author": "Joery Van den Bosch",
+      "url": "https://intunestuff.tools/",
+      "category": "device-management",
+      "kind": "web",
+      "desc": "Windows desktop GUI for bulk Intune device operations and Entra ID group management with advanced filtering, dry-run safety, and logging."
+    },
+    {
+      "name": "Intune Autopilot Tool",
+      "author": "iamwillcode",
+      "url": "https://github.com/iamwillcode/Intune-Autopilot-Tool",
+      "category": "device-management",
+      "kind": "repo",
+      "desc": "PowerShell WPF tool to onboard devices to Intune and Autopilot via Graph API, handling encryption, profiles, user assignment, and hardware checks."
+    },
+    {
+      "name": "InSight",
+      "author": "MrOlof",
+      "url": "https://github.com/MrOlof/InSight",
+      "category": "device-management",
+      "kind": "repo",
+      "desc": "PowerShell GUI for Intune administration including device ownership analysis and tenant overview."
+    },
+    {
+      "name": "Intune Device Classification",
+      "author": "MrWyss-MSFT",
+      "url": "https://github.com/MrWyss-MSFT/IntuneDeviceClassification",
+      "category": "device-management",
+      "kind": "repo",
+      "desc": "Classifies and tags devices so dynamic Entra ID groups can be built from device characteristics rather than manual membership."
+    },
+    {
+      "name": "Intune Help Desk",
+      "author": "backuploki",
+      "url": "https://github.com/backuploki/Intune-Help-Desk",
+      "category": "device-management",
+      "kind": "repo",
+      "desc": "Interactive CLI dashboard for helpdesk teams to query Intune devices and view compliance without opening the portal."
+    },
+    {
+      "name": "System Information and Self-service Tool",
+      "author": "Jannik Reinhard",
+      "url": "https://jannikreinhard.com/2023/01/01/system-information-and-self-service-tool/",
+      "category": "troubleshooting",
+      "kind": "guide",
+      "desc": "End-user facing self-service app showing device info and basic troubleshooting actions."
+    },
+    {
+      "name": "Intune Debug Toolkit",
+      "author": "MSEndpointMgr",
+      "url": "https://github.com/MSEndpointMgr/IntuneDebugToolkit",
+      "category": "troubleshooting",
+      "kind": "repo",
+      "desc": "Toolbox for troubleshooting Intune-managed clients with Win32 re-deploy, Autopilot and ESP inspection, a SyncML viewer, and event log helpers."
+    },
+    {
+      "name": "Intune Device Details UI",
+      "author": "Petri Paavola",
+      "url": "https://github.com/petripaavola/IntuneDeviceDetailsGUI",
+      "category": "troubleshooting",
+      "kind": "repo",
+      "desc": "GUI providing a Resultant Set of Policy style view of Intune device and user details, app and configuration deployments."
+    },
+    {
+      "name": "Get-IntuneManagementExtensionDiagnostics",
+      "author": "Petri Paavola",
+      "url": "https://github.com/petripaavola/Get-IntuneManagementExtensionDiagnostics",
+      "category": "troubleshooting",
+      "kind": "repo",
+      "desc": "Parses Intune Management Extension logs into an HTML timeline, with a log viewer UI for detailed IME troubleshooting."
+    },
+    {
+      "name": "Intune Device Troubleshooter",
+      "author": "Jannik Reinhard",
+      "url": "https://github.com/JayRHa/IntuneDeviceTroubleshooter",
+      "category": "troubleshooting",
+      "kind": "repo",
+      "desc": "PowerShell desktop UI for device-level troubleshooting combining device data, compliance, app states, and remediation actions."
+    },
+    {
+      "name": "Get-WindowsTroubleshootingReportCommunity",
+      "author": "Petri Paavola",
+      "url": "https://github.com/petripaavola/Get-WindowsTroubleshootingReportCommunity",
+      "category": "troubleshooting",
+      "kind": "repo",
+      "desc": "Unifies Windows Event Logs and Intune log files into a single interactive HTML timeline report."
+    },
+    {
+      "name": "Intune Log Reader for Windows",
+      "author": "Somesh Pathak",
+      "url": "https://github.com/pathaksomesh06/Intune-Log-Reader-for-Windows",
+      "category": "troubleshooting",
+      "kind": "repo",
+      "desc": "Desktop app providing real-time analysis of Intune Management Extension logs with dashboards, search, and export."
+    },
+    {
+      "name": "IntuneDiag",
+      "author": "IntuneDiag",
+      "url": "https://www.intunediag.com/",
+      "category": "troubleshooting",
+      "kind": "web",
+      "desc": "Browser tool that analyzes dsregcmd /status output, showing Entra join state, certificate validity, PRT attempts, and registration issues."
+    },
+    {
+      "name": "IntuneEndpointTools",
+      "author": "David Just",
+      "url": "https://github.com/djust270/IntuneEndpointTools",
+      "category": "troubleshooting",
+      "kind": "repo",
+      "desc": "PowerShell module for quickly gathering Intune client diagnostics and MDMDiagnostics reports."
+    },
+    {
+      "name": "IntunePremier",
+      "author": "Shepherd0619",
+      "url": "https://github.com/Shepherd0619/IntunePremier",
+      "category": "troubleshooting",
+      "kind": "repo",
+      "desc": "Open-source tools aimed at helpdesk staff handling daily Intune troubleshooting tasks."
+    },
+    {
+      "name": "CMTraceOpen",
+      "author": "Adam Gell",
+      "url": "https://github.com/adamgell/cmtraceopen",
+      "category": "troubleshooting",
+      "kind": "repo",
+      "desc": "Free, open-source CMTrace replacement for reading ConfigMgr, Intune IME, and Autopilot ESP log files on modern Windows."
+    },
+    {
+      "name": "Intune One Data Collector",
+      "author": "markstan",
+      "url": "https://github.com/markstan/IntuneOneDataCollector",
+      "category": "troubleshooting",
+      "kind": "repo",
+      "desc": "Automated collector that gathers the full diagnostic data set Microsoft support asks for when opening an Intune case."
+    },
+    {
+      "name": "IntuneWUTools",
+      "author": "markstan",
+      "url": "https://github.com/markstan/IntuneWUTools",
+      "category": "troubleshooting",
+      "kind": "repo",
+      "desc": "Tools for troubleshooting Windows Update behaviour on Intune-managed clients."
+    },
+    {
+      "name": "MHimken Toolbox",
+      "author": "MHimken",
+      "url": "https://github.com/MHimken/toolbox",
+      "category": "troubleshooting",
+      "kind": "repo",
+      "desc": "Collection of endpoint management scripts covering Autopilot diagnostics, ESP inspection, and client-side troubleshooting."
+    },
+    {
+      "name": "Microsoft Win32 Content Prep Tool",
+      "author": "Microsoft",
+      "url": "https://github.com/microsoft/Microsoft-Win32-Content-Prep-Tool",
+      "category": "packaging",
+      "kind": "repo",
+      "desc": "The official utility that wraps Win32 installers into the .intunewin format required for upload."
+    },
+    {
+      "name": "PSAppDeployToolkit",
+      "author": "PSAppDeployToolkit",
+      "url": "https://github.com/PSAppDeployToolkit/PSAppDeployToolkit",
+      "category": "packaging",
+      "kind": "repo",
+      "desc": "Framework for building consistent, user-aware application installs with deferral prompts, process handling, and logging."
+    },
+    {
+      "name": "WinTuner",
+      "author": "Stephan van Rooij",
+      "url": "https://github.com/svrooij/WinTuner",
+      "category": "packaging",
+      "kind": "repo",
+      "desc": "Packages any Winget app straight into Intune from the command line or a PowerShell module, including icons and detection rules."
+    },
+    {
+      "name": "IntuneGet",
+      "author": "Ugur Koc",
+      "url": "https://github.com/ugurkocde/IntuneGet",
+      "category": "packaging",
+      "kind": "repo",
+      "desc": "Skips the manual packaging workflow and deploys Winget apps to Intune in a few clicks."
+    },
+    {
+      "name": "Winget-Install",
+      "author": "Romanitho",
+      "url": "https://github.com/Romanitho/Winget-Install",
+      "category": "packaging",
+      "kind": "repo",
+      "desc": "PowerShell scripts for installing and updating Winget packages in system context from Intune or ConfigMgr."
+    },
+    {
+      "name": "WingetIntunePackager",
+      "author": "Romanitho",
+      "url": "https://github.com/Romanitho/WingetIntunePackager",
+      "category": "packaging",
+      "kind": "repo",
+      "desc": "GUI packager that turns Winget packages into ready-to-upload Intune Win32 apps."
+    },
+    {
+      "name": "WinGet-Wrapper",
+      "author": "Soren Lundt",
+      "url": "https://github.com/SorenLundt/WinGet-Wrapper",
+      "category": "packaging",
+      "kind": "repo",
+      "desc": "Bulk-imports Winget packages into Intune including all package metadata, detection, and requirement rules."
+    },
+    {
+      "name": "IntuneWin32Deployer",
+      "author": "Florian Salzmann",
+      "url": "https://github.com/FlorianSLZ/IntuneWin32Deployer",
+      "category": "packaging",
+      "kind": "repo",
+      "desc": "Creates and deploys Winget and Chocolatey apps to Intune as Win32 packages in one command."
+    },
+    {
+      "name": "Intune App Factory",
+      "author": "MSEndpointMgr",
+      "url": "https://github.com/MSEndpointMgr/IntuneAppFactory",
+      "category": "packaging",
+      "kind": "repo",
+      "desc": "Azure DevOps pipeline that automates Win32 application packaging and publishing to Intune end to end."
+    },
+    {
+      "name": "IntuneWin32AppPackager",
+      "author": "MSEndpointMgr",
+      "url": "https://github.com/MSEndpointMgr/IntuneWin32AppPackager",
+      "category": "packaging",
+      "kind": "repo",
+      "desc": "Framework that packages, creates, and simultaneously documents Win32 applications for Intune."
+    },
+    {
+      "name": "Package Factory",
+      "author": "Aaron Parker",
+      "url": "https://github.com/aaronparker/packagefactory",
+      "category": "packaging",
+      "kind": "repo",
+      "desc": "Packaging factory for Intune built on Evergreen and VcRedist, keeping app packages continuously current."
+    },
+    {
+      "name": "IntunePrepTool",
+      "author": "Rink Turksma",
+      "url": "https://github.com/rink-turksma/IntunePrepTool",
+      "category": "packaging",
+      "kind": "repo",
+      "desc": "GUI front end for the Win32 Content Prep Tool that speeds up repetitive packaging work."
+    },
+    {
+      "name": "Intune App Deploy",
+      "author": "Ben Reader",
+      "url": "https://github.com/tabs-not-spaces/Intune-App-Deploy",
+      "category": "packaging",
+      "kind": "repo",
+      "desc": "Reliable path to package Win32 applications and deploy them to Intune from any source, including CI pipelines."
+    },
+    {
+      "name": "IntuneAppCreator",
+      "author": "Jannik Reinhard",
+      "url": "https://github.com/JayRHa/IntuneAppCreator",
+      "category": "packaging",
+      "kind": "repo",
+      "desc": "Automates creation, packaging, and deployment preparation of Intune Win32 apps."
+    },
+    {
+      "name": "Win32 Toolkit",
+      "author": "Maxime Guillemin",
+      "url": "https://github.com/MG-Cloudflow/win32-toolkit",
+      "category": "packaging",
+      "kind": "repo",
+      "desc": "End-to-end Win32 packaging that accepts a Winget package or your own installer and produces a deployable app."
+    },
+    {
+      "name": "WrapTune",
+      "author": "thefinder808",
+      "url": "https://github.com/thefinder808/WrapTune",
+      "category": "packaging",
+      "kind": "repo",
+      "desc": "Friendly GUI for IntuneWinAppUtil.exe for admins who would rather not memorise its arguments."
+    },
+    {
+      "name": "Deployment Editor",
+      "author": "tugich",
+      "url": "https://github.com/tugich/DeploymentEditor",
+      "category": "packaging",
+      "kind": "repo",
+      "desc": "Click-together sequence builder for PSAppDeployToolkit packages, lowering the scripting barrier for packagers."
+    },
+    {
+      "name": "IntuneWin Build and Extract Tool",
+      "author": "Damien Van Robaeys",
+      "url": "https://www.systanddeploy.com/2023/05/intunewin-build-and-extract-tool-to.html",
+      "category": "packaging",
+      "kind": "guide",
+      "desc": "GUI tool to build and, crucially, extract .intunewin packages when you need to inspect what shipped."
+    },
+    {
+      "name": "IntuneAppAssigner",
+      "author": "Nick Benton",
+      "url": "https://github.com/ennnbeee/IntuneAppAssigner",
+      "category": "packaging",
+      "kind": "repo",
+      "desc": "Bulk updates or replaces assignments across many Intune applications at once."
+    },
+    {
+      "name": "Intune.USB.Creator",
+      "author": "Ben Reader",
+      "url": "https://github.com/tabs-not-spaces/Intune.USB.Creator",
+      "category": "autopilot",
+      "kind": "repo",
+      "desc": "Builds a bootable WinPE USB used to provision devices for Autopilot enrollment."
+    },
+    {
+      "name": "Intune.HV.Tools",
+      "author": "Ben Reader",
+      "url": "https://github.com/tabs-not-spaces/Intune.HV.Tools",
+      "category": "autopilot",
+      "kind": "repo",
+      "desc": "Spins up Intune-managed Hyper-V virtual machines for testing enrollment and policy without touching real hardware."
+    },
+    {
+      "name": "Foundry",
+      "author": "foundry-osd",
+      "url": "https://github.com/foundry-osd/foundry",
+      "category": "autopilot",
+      "kind": "repo",
+      "desc": "Modern open-source Windows deployment solution with a graphical interface for creating bootable provisioning media."
+    },
+    {
+      "name": "WinAutopilotImport",
+      "author": "tugich",
+      "url": "https://github.com/tugich/WinAutopilotImport",
+      "category": "autopilot",
+      "kind": "repo",
+      "desc": "Simple GUI for registering a Windows device with Autopilot during OOBE."
+    },
+    {
+      "name": "Get-WindowsAutopilotImportCommunity",
+      "author": "markorr321",
+      "url": "https://github.com/markorr321/Get-WindowsAutopilotImportCommunity",
+      "category": "autopilot",
+      "kind": "repo",
+      "desc": "Registers devices with Autopilot from a real GUI instead of a console, supporting hardware hash collection and Group Tag selection."
+    },
+    {
+      "name": "Autopilot Cleanup",
+      "author": "markorr321",
+      "url": "https://github.com/markorr321/Autopilot-Cleanup",
+      "category": "autopilot",
+      "kind": "repo",
+      "desc": "Interactive tool for bulk device cleanup across Autopilot, Intune, and Entra ID in a single pass."
+    },
+    {
+      "name": "IntuneMigrationV2",
+      "author": "stevecapacity",
+      "url": "https://github.com/stevecapacity/IntuneMigrationV2",
+      "category": "autopilot",
+      "kind": "repo",
+      "desc": "Tenant-to-tenant device migration supporting in-place migration as well as hardware hash re-import."
+    },
+    {
+      "name": "OpenIntuneBaseline",
+      "author": "SkipToTheEndpoint",
+      "url": "https://github.com/SkipToTheEndpoint/OpenIntuneBaseline",
+      "category": "baselines",
+      "kind": "repo",
+      "desc": "Community-driven Intune baseline covering Windows configuration, security, and update policies as importable JSON."
+    },
+    {
+      "name": "Microsoft365DSC",
+      "author": "Microsoft365DSC",
+      "url": "https://github.com/microsoft/Microsoft365DSC",
+      "category": "baselines",
+      "kind": "repo",
+      "desc": "Manages the entire Microsoft 365 configuration, Intune included, as declarative PowerShell DSC code with drift reporting."
+    },
+    {
+      "name": "IntuneHydrationKit",
+      "author": "jorgeasaurus",
+      "url": "https://github.com/jorgeasaurus/IntuneHydrationKit",
+      "category": "baselines",
+      "kind": "repo",
+      "desc": "Imports a set of starter configurations into a fresh tenant so a lab or new deployment is usable quickly."
+    },
+    {
+      "name": "IntuneBaselines",
+      "author": "Wolkenman",
+      "url": "https://github.com/IntuneAdmin/IntuneBaselines",
+      "category": "baselines",
+      "kind": "repo",
+      "desc": "Intune baseline profiles in JSON format for standing up a modern workplace configuration."
+    },
+    {
+      "name": "IntuneLinuxBaseline",
+      "author": "glueckkanja",
+      "url": "https://github.com/glueckkanja/IntuneLinuxBaseline",
+      "category": "baselines",
+      "kind": "repo",
+      "desc": "Baseline configuration for managing Linux endpoints through Intune."
+    },
+    {
+      "name": "Intune Preflight",
+      "author": "kevinmalinoski",
+      "url": "https://github.com/kevinmalinoski/intune-preflight",
+      "category": "baselines",
+      "kind": "repo",
+      "desc": "Simulates an Intune endpoint and previews the merged policy baseline a device would actually receive, read-only."
+    },
+    {
+      "name": "Shell Intune Samples",
+      "author": "Microsoft",
+      "url": "https://github.com/microsoft/shell-intune-samples",
+      "category": "apple",
+      "kind": "repo",
+      "desc": "Microsoft's reference shell scripts for macOS and Linux Intune admins, covering app installs, custom attributes, and detection."
+    },
+    {
+      "name": "intune-my-macs",
+      "author": "Microsoft",
+      "url": "https://github.com/microsoft/intune-my-macs",
+      "category": "apple",
+      "kind": "repo",
+      "desc": "Automation project that configures an Intune environment for macOS management quickly and repeatably."
+    },
+    {
+      "name": "Intune Mac Admins",
+      "author": "Ugur Koc",
+      "url": "https://github.com/ugurkocde/intunemacadmins",
+      "category": "apple",
+      "kind": "repo",
+      "desc": "Community platform with detailed guides, scripts, and best practices for managing macOS devices via Intune."
+    },
+    {
+      "name": "IntuneBrew",
+      "author": "Ugur Koc",
+      "url": "https://github.com/ugurkocde/IntuneBrew",
+      "category": "apple",
+      "kind": "repo",
+      "desc": "Simplifies uploading and managing macOS applications in Intune, drawing on a large catalog of maintained app definitions."
+    },
+    {
+      "name": "MISA (macOS Intune Support Assistant)",
+      "author": "Somesh Pathak",
+      "url": "https://github.com/pathaksomesh06/MISA",
+      "category": "apple",
+      "kind": "repo",
+      "desc": "Support assistant for macOS endpoints that surfaces enrollment and policy state for helpdesk staff."
+    },
+    {
+      "name": "IntuneLogWatch",
+      "author": "Gil Burns",
+      "url": "https://github.com/gilburns/IntuneLogWatch",
+      "category": "apple",
+      "kind": "repo",
+      "desc": "macOS application that analyzes Intune agent logs and delivers human-readable insight instead of raw text."
+    },
+    {
+      "name": "Third Party Patcher",
+      "author": "Gil Burns",
+      "url": "https://github.com/gilburns/Third-Party-Patcher",
+      "category": "apple",
+      "kind": "repo",
+      "desc": "MDM-agnostic, MDM-managed daemon that handles third-party patching and software distribution on macOS."
+    },
+    {
+      "name": "macOS MDM Profiles",
+      "author": "homotechsual",
+      "url": "https://github.com/homotechsual/macOS-MDM-Profiles",
+      "category": "apple",
+      "kind": "repo",
+      "desc": "Ready-made MDM profiles for configuring permissions and services on macOS devices through Intune."
+    },
+    {
+      "name": "Intune Goodies",
+      "author": "Oktay Sari",
+      "url": "https://github.com/oktay-sari/Intune-Goodies",
+      "category": "apple",
+      "kind": "repo",
+      "desc": "Collection of scripts and tools covering macOS and cross-platform Intune management tasks."
+    },
+    {
+      "name": "JUMP-IN",
+      "author": "Somesh Pathak",
+      "url": "https://github.com/pathaksomesh06/JUMP-IN",
+      "category": "apple",
+      "kind": "repo",
+      "desc": "macOS application that simplifies migration between MDM solutions, aimed at moving Macs into Intune."
+    },
+    {
+      "name": "WrapTune for macOS",
+      "author": "thefinder808",
+      "url": "https://github.com/thefinder808/WrapTune-MacOS",
+      "category": "apple",
+      "kind": "repo",
+      "desc": "Builds Intune .intunewin packages from a Mac, so packagers are not forced onto a Windows box."
+    },
+    {
+      "name": "macOS Hardening",
+      "author": "R33Dfield",
+      "url": "https://github.com/R33Dfield/MacOSHardening",
+      "category": "apple",
+      "kind": "repo",
+      "desc": "Intune configuration files for hardening macOS against a documented security standard."
+    },
+    {
+      "name": "iOS Hardening",
+      "author": "R33Dfield",
+      "url": "https://github.com/R33Dfield/iOSHardening",
+      "category": "apple",
+      "kind": "repo",
+      "desc": "Intune configuration files for hardening iOS and iPadOS devices."
+    },
+    {
+      "name": "iOS/iPadOS Intune Baseline",
+      "author": "UniFy-Endpoint",
+      "url": "https://github.com/UniFy-Endpoint/iOS-iPadOS-Intune-Baseline",
+      "category": "apple",
+      "kind": "repo",
+      "desc": "CIS-aligned baseline for iOS and iPadOS with importable JSON policies and deployment guides."
+    },
+    {
+      "name": "Intune App SDK for iOS",
+      "author": "Microsoft",
+      "url": "https://github.com/microsoftconnect/ms-intune-app-sdk-ios",
+      "category": "apple",
+      "kind": "repo",
+      "desc": "Official SDK enabling app protection and data protection features inside in-house iOS applications."
+    },
+    {
+      "name": "Android Enterprise Baseline",
+      "author": "UniFy-Endpoint",
+      "url": "https://github.com/UniFy-Endpoint/Android-Enterprise-Baseline",
+      "category": "android",
+      "kind": "repo",
+      "desc": "Android Enterprise baseline policies and deployment guides for Intune."
+    },
+    {
+      "name": "Intune Android QR Wizard",
+      "author": "brommet87",
+      "url": "https://github.com/brommet87/Intune-Android-QR-Wizard",
+      "category": "android",
+      "kind": "repo",
+      "desc": "Generates Wi-Fi QR codes to simplify network configuration during Android Enterprise enrollment."
+    },
+    {
+      "name": "Intune Apps",
+      "author": "Aaron Parker",
+      "url": "https://github.com/aaronparker/intune-apps",
+      "category": "android",
+      "kind": "repo",
+      "desc": "Definitions for managing Windows, macOS, Android, and iOS applications in Intune from one place."
+    },
+    {
+      "name": "PowerShell Intune Samples",
+      "author": "Microsoft Graph",
+      "url": "https://github.com/microsoftgraph/powershell-intune-samples",
+      "category": "graph",
+      "kind": "repo",
+      "desc": "Microsoft's long-standing sample library showing how to reach every Intune Graph resource from PowerShell."
+    },
+    {
+      "name": "Microsoft Graph PowerShell Intune Samples",
+      "author": "Microsoft",
+      "url": "https://github.com/microsoft/mggraph-intune-samples",
+      "category": "graph",
+      "kind": "repo",
+      "desc": "Current sample set built for the Microsoft Graph PowerShell SDK, replacing the older Intune-specific module."
+    },
+    {
+      "name": "Intune PowerShell SDK",
+      "author": "Microsoft",
+      "url": "https://github.com/microsoft/Intune-PowerShell-SDK",
+      "category": "graph",
+      "kind": "repo",
+      "desc": "Native PowerShell cmdlets wrapping the Intune Graph API for IT Pro scenario automation."
+    },
+    {
+      "name": "GraphXray",
+      "author": "Merill Fernando",
+      "url": "https://github.com/merill/graphxray",
+      "category": "graph",
+      "kind": "repo",
+      "desc": "Watches actions you take in the Entra or Intune portal and shows the equivalent Graph calls and PowerShell to script them."
+    },
+    {
+      "name": "InTUI",
+      "author": "jorgeasaurus",
+      "url": "https://github.com/jorgeasaurus/InTUI",
+      "category": "graph",
+      "kind": "repo",
+      "desc": "Terminal user interface for Intune management, driving Graph from a keyboard-first console."
+    },
+    {
+      "name": "IntuneQL",
+      "author": "Ugur Koc",
+      "url": "https://github.com/ugurkocde/IntuneQL",
+      "category": "graph",
+      "kind": "repo",
+      "desc": "Keyboard-driven terminal workspace for querying the Graph API and browsing Intune resources visually."
+    },
+    {
+      "name": "MgGraphCommunity",
+      "author": "Ugur Koc",
+      "url": "https://github.com/ugurkocde/MgGraphCommunity",
+      "category": "graph",
+      "kind": "repo",
+      "desc": "Community drop-in alternative to Connect-MgGraph in pure PowerShell, avoiding WAM and MSAL dependencies."
+    },
+    {
+      "name": "Aaron Parker's Intune Scripts",
+      "author": "Aaron Parker",
+      "url": "https://github.com/aaronparker/intune",
+      "category": "graph",
+      "kind": "repo",
+      "desc": "Broad, well-maintained collection of scripts and tooling for use with Intune."
+    },
+    {
+      "name": "MSEndpointMgr Reporting",
+      "author": "MSEndpointMgr",
+      "url": "https://github.com/MSEndpointMgr/Reporting",
+      "category": "reporting",
+      "kind": "repo",
+      "desc": "Intune reporting built on Azure Monitor, Log Analytics, and Azure Workbooks."
+    },
+    {
+      "name": "Intune.Reporting",
+      "author": "Ben Reader",
+      "url": "https://github.com/tabs-not-spaces/Intune.Reporting",
+      "category": "reporting",
+      "kind": "repo",
+      "desc": "Generates presentable Intune reports from PowerShell for stakeholders who will not log into the portal."
+    },
+    {
+      "name": "Intune Reporting",
+      "author": "Damien Van Robaeys",
+      "url": "https://github.com/damienvanrobaeys/Intune-Reporting",
+      "category": "reporting",
+      "kind": "repo",
+      "desc": "Reporting scripts covering device, app, and policy status across the tenant."
+    },
+    {
+      "name": "Power BI Dashboards for Intune",
+      "author": "Jannik Reinhard",
+      "url": "https://github.com/JayRHa/PowerBIDashboards",
+      "category": "reporting",
+      "kind": "repo",
+      "desc": "Power BI templates for Endpoint Analytics and device management reporting."
+    },
+    {
+      "name": "Intune Patching & OS Compliance Dashboard",
+      "author": "greebo-labs",
+      "url": "https://github.com/greebo-labs/intune-patching-os-compliance-dashboard",
+      "category": "reporting",
+      "kind": "repo",
+      "desc": "Browser-based dashboard for patch compliance, Windows OS lifecycle tracking, and executive reporting."
+    },
+    {
+      "name": "M365-Assess",
+      "author": "Galvnyz",
+      "url": "https://github.com/Galvnyz/M365-Assess",
+      "category": "reporting",
+      "kind": "repo",
+      "desc": "Runs hundreds of automated checks across multiple compliance frameworks and produces an interactive HTML report locally."
+    },
+    {
+      "name": "IntuneComplianceReport",
+      "author": "DanStutz",
+      "url": "https://github.com/DanStutz/IntuneComplianceReport",
+      "category": "reporting",
+      "kind": "repo",
+      "desc": "Exports device compliance to a wide CSV via Graph, one row per device with each policy as a column."
+    },
+    {
+      "name": "Enhanced Inventory for Intune",
+      "author": "Jan Ketil Skanke",
+      "url": "https://msendpointmgr.com/2022/01/17/securing-intune-enhanced-inventory-with-azure-function/",
+      "category": "reporting",
+      "kind": "guide",
+      "desc": "Azure Function solution that enriches Intune inventory data for reporting and security use."
+    },
+    {
+      "name": "Endpoint Analytics Remediation Scripts",
+      "author": "Jannik Reinhard",
+      "url": "https://github.com/JayRHa/EndpointAnalyticsRemediationScripts",
+      "category": "remediation",
+      "kind": "repo",
+      "desc": "Large library of ready-to-use proactive remediation detection and remediation script pairs."
+    },
+    {
+      "name": "Intune Remediation Scripts",
+      "author": "Damien Van Robaeys",
+      "url": "https://github.com/damienvanrobaeys/Intune-Remediation-scripts",
+      "category": "remediation",
+      "kind": "repo",
+      "desc": "Practical remediation scripts covering common Windows configuration and repair scenarios."
+    },
+    {
+      "name": "Remediations",
+      "author": "Aaron Parker",
+      "url": "https://github.com/aaronparker/remediations",
+      "category": "remediation",
+      "kind": "repo",
+      "desc": "Curated remediation scripts written for Intune with an emphasis on idempotence and clean detection logic."
+    },
+    {
+      "name": "RemediationCreator",
+      "author": "Jannik Reinhard",
+      "url": "https://github.com/JayRHa/RemediationCreator",
+      "category": "remediation",
+      "kind": "repo",
+      "desc": "Creates and manages proactive remediation script packages rather than hand-uploading each pair."
+    },
+    {
+      "name": "IROD (Intune Remediations On-Demand)",
+      "author": "markorr321",
+      "url": "https://github.com/markorr321/IROD",
+      "category": "remediation",
+      "kind": "repo",
+      "desc": "Runs remediation scripts on demand from a WPF GUI backed by the Graph API, instead of waiting for schedules."
+    },
+    {
+      "name": "Intune Registry Management",
+      "author": "Martin Bengtsson",
+      "url": "https://github.com/imabdk/Intune-Registry-Management",
+      "category": "remediation",
+      "kind": "repo",
+      "desc": "Single reusable script for managing Windows registry values through Intune remediations."
+    },
+    {
+      "name": "Endpoint Manager Scripts",
+      "author": "Richard Hicks",
+      "url": "https://github.com/richardhicks/endpointmanager",
+      "category": "remediation",
+      "kind": "repo",
+      "desc": "Proactive remediation scripts with a focus on networking, VPN, and Always On VPN scenarios."
+    },
+    {
+      "name": "Proactive Remediation for Business",
+      "author": "Florian Salzmann",
+      "url": "https://scloud.work/proactive-remediation-for-business/",
+      "category": "remediation",
+      "kind": "guide",
+      "desc": "Opinionated framework and worked examples for running proactive remediations in production."
+    },
+    {
+      "name": "Windows App Health Check Log Reader",
+      "author": "Niall Brady & Paul Winstanley",
+      "url": "https://www.niallbrady.com/2025/10/04/using-remediation-scripts-in-intune-to-grab-windows-365-health-check-logs/",
+      "category": "remediation",
+      "kind": "guide",
+      "desc": "Remediation that copies Windows app health check logs into IME logs for easier remote diagnostics."
+    },
+    {
+      "name": "Intune Backup and Restore",
+      "author": "John Seerden",
+      "url": "https://github.com/jseerden/IntuneBackupAndRestore",
+      "category": "backup",
+      "kind": "repo",
+      "desc": "PowerShell module querying Graph for cross-tenant backup and restore of Intune configuration."
+    },
+    {
+      "name": "Automatic Microsoft 365 Documentation",
+      "author": "Thomas Kurth",
+      "url": "https://github.com/ThomasKur/M365Documentation",
+      "category": "backup",
+      "kind": "repo",
+      "desc": "Automated engine generating readable Intune and Microsoft 365 configuration documentation."
+    },
+    {
+      "name": "TenuVault",
+      "author": "Ugur Koc",
+      "url": "https://ugurlabs.com/tools/tenuvault",
+      "category": "backup",
+      "kind": "web",
+      "desc": "Backup solution offering scheduled backups, configuration drift detection, and one-click restores across tenants."
+    },
+    {
+      "name": "TrustM365",
+      "author": "AntoPorter",
+      "url": "https://github.com/AntoPorter/TrustM365",
+      "category": "backup",
+      "kind": "repo",
+      "desc": "Self-hosted configuration drift monitoring that baselines a tenant and detects changes at the property level."
+    },
+    {
+      "name": "Pre-boot BitLocker Startup PIN",
+      "author": "Oliver Kieselbach",
+      "url": "https://oliverkieselbach.com/2019/08/02/how-to-enable-pre-boot-bitlocker-startup-pin-on-windows-with-intune/",
+      "category": "security",
+      "kind": "guide",
+      "desc": "Reference walkthrough for enabling pre-boot BitLocker startup PIN through Intune policy."
+    },
+    {
+      "name": "DCToolbox",
+      "author": "Daniel Chronlund",
+      "url": "https://danielchronlund.com/2020/11/09/dctoolbox-powershell-module-for-microsoft-365-security-conditional-access-automation-and-more/",
+      "category": "security",
+      "kind": "guide",
+      "desc": "PowerShell module automating Microsoft 365 security and Conditional Access operations and documentation."
+    },
+    {
+      "name": "Windows LAPS Self-Service Portal",
+      "author": "Daniel Fraubaum",
+      "url": "https://github.com/daniel-fraubaum/laps-self-service-portal",
+      "category": "security",
+      "kind": "repo",
+      "desc": "Azure Static Web Apps and Functions solution letting users retrieve the LAPS password for their own device with a full audit trail."
+    },
+    {
+      "name": "Windows Hardening",
+      "author": "R33Dfield",
+      "url": "https://github.com/R33Dfield/WindowsHardening",
+      "category": "security",
+      "kind": "repo",
+      "desc": "Hardening scripts and baselines deployable through Intune for stricter Windows security posture."
+    },
+    {
+      "name": "Harden Windows Security",
+      "author": "HotCakeX",
+      "url": "https://github.com/HotCakeX/Harden-Windows-Security",
+      "category": "security",
+      "kind": "repo",
+      "desc": "Extensively documented hardening module using officially supported Microsoft methods, with policies deployable via Intune."
+    },
+    {
+      "name": "Intune Script Viewer",
+      "author": "Trevor Jones",
+      "url": "https://smsagent.blog/2022/05/11/script-viewer-for-microsoft-endpoint-manager/",
+      "category": "automation",
+      "kind": "guide",
+      "desc": "Script viewer and manager for Intune PowerShell scripts with search, filtering, and editing."
+    },
+    {
+      "name": "IntuneCD",
+      "author": "Tobias Almen",
+      "url": "https://github.com/almenscorner/IntuneCD",
+      "category": "automation",
+      "kind": "repo",
+      "desc": "Backs up, documents, and deploys Intune configuration from source control, making tenant config a reviewable pipeline."
+    },
+    {
+      "name": "Intune Assignment Checker",
+      "author": "Ugur Koc",
+      "url": "https://github.com/ugurkocde/IntuneAssignmentChecker",
+      "category": "automation",
+      "kind": "repo",
+      "desc": "Audits Intune assignments for users, groups, and devices, surfacing unassigned policies and empty groups in HTML reports."
+    },
+    {
+      "name": "Intune Assistant",
+      "author": "Sander Rozemuller",
+      "url": "https://intuneassistant.cloud/",
+      "category": "automation",
+      "kind": "web",
+      "desc": "Web platform for assignment insight, configuration analysis, rollout assistance, and reporting across tenants."
+    },
+    {
+      "name": "Intune Toolkit",
+      "author": "Maxime Guillemin",
+      "url": "https://github.com/MG-Cloudflow/Intune-Toolkit",
+      "category": "automation",
+      "kind": "repo",
+      "desc": "PowerShell toolkit with a UI for managing policy assignments and backing up or restoring them."
+    },
+    {
+      "name": "Feature Update Controller",
+      "author": "MSEndpointMgr",
+      "url": "https://github.com/MSEndpointMgr/FeatureUpdateController",
+      "category": "automation",
+      "kind": "repo",
+      "desc": "Centralises control of Windows feature update rollout for Intune-managed devices instead of managing rings by hand."
+    },
+    {
+      "name": "DUDE Manager",
+      "author": "Simon Skotheimsvik",
+      "url": "https://skotheimsvik.no/toolbox-rundown/#dude-manager",
+      "category": "automation",
+      "kind": "guide",
+      "desc": "GUI to deploy and monitor the DUDE automation engine that syncs Intune device groups with Entra user groups."
+    },
+    {
+      "name": "Intune Registry Builder",
+      "author": "Daniel Fraubaum",
+      "url": "https://headsinthecloud.blog/intuneregistrybuilder/",
+      "category": "misc",
+      "kind": "web",
+      "desc": "Browser tool to define registry changes and generate Intune-ready detection and remediation scripts or Win32 bundles."
+    },
+    {
+      "name": "cmd.ms",
+      "author": "Merill Fernando",
+      "url": "https://cmd.ms",
+      "category": "misc",
+      "kind": "web",
+      "desc": "URL-based command line and browser extension that jumps straight to Azure, Entra, Intune, and Defender admin blades."
+    },
+    {
+      "name": "Intune Drive Mapping Generator",
+      "author": "Nicola Suter",
+      "url": "https://intunedrivemapping.azurewebsites.net/",
+      "category": "misc",
+      "kind": "web",
+      "desc": "Web generator for drive-mapping policies targeting users and devices without hand-writing XML."
+    },
+    {
+      "name": "Toolbox Rundown",
+      "author": "Simon Skotheimsvik",
+      "url": "https://skotheimsvik.no/toolbox-rundown/",
+      "category": "misc",
+      "kind": "guide",
+      "desc": "Curated rundown of endpoint management tools, useful as a second discovery hub alongside this list."
+    },
+    {
+      "name": "Intune Wall of Tools",
+      "author": "IntuneQLinks",
+      "url": "https://intuneqlinks.net/wall-of-tools",
+      "category": "misc",
+      "kind": "web",
+      "desc": "Community hub cataloguing Intune settings references, community content, and a broad tool directory."
+    },
+    {
+      "name": "Awesome Intune",
+      "author": "awesomeintune.com",
+      "url": "https://www.awesomeintune.com/",
+      "category": "misc",
+      "kind": "web",
+      "desc": "Large searchable directory of free Intune tools and scripts with source-code risk scanning on listed projects."
+    },
+    {
+      "name": "Intune Inspector",
+      "author": "fscorrupt",
+      "url": "https://github.com/fscorrupt/IntuneInspector",
+      "category": "device-management",
+      "kind": "repo",
+      "desc": "WPF GUI that caches every policy type locally and full-text searches across them, including decoded PowerShell script content."
+    }
+  ]
+}

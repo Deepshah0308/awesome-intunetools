@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+<rect width="1200" height="630" fill="#101A2E"/>
+<rect y="614" width="1200" height="16" fill="#2D5BFF"/>
+<g font-family="Space Grotesk, Helvetica, Arial, sans-serif" fill="#FFFFFF">
+<text x="80" y="228" font-size="82" font-weight="700">Awesome Intune Tools</text>
+</g>
+<g font-family="IBM Plex Sans, Helvetica, Arial, sans-serif">
+<text x="80" y="300" font-size="34" fill="#B9C6DE">A curated, searchable directory of community tools</text>
+<text x="80" y="348" font-size="34" fill="#B9C6DE">for Microsoft Intune administrators.</text>
+<text x="80" y="470" font-size="27" fill="#8FB0FF">Troubleshooting - Packaging - Autopilot - Reporting - Security - macOS</text>
+<text x="80" y="536" font-size="25" fill="#7A89A8">deepshah0308.github.io/awesome-intunetools</text>
+</g>
+<rect x="1010" y="150" width="110" height="110" fill="none" stroke="#2D5BFF" stroke-width="9"/>
+<circle cx="1065" cy="205" r="22" fill="#00A0A8"/>
+</svg>
