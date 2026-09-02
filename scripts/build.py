@@ -31,9 +31,16 @@ KIND_LABEL = {"repo": "Open source", "web": "Hosted tool", "guide": "Guide"}
 LOGO = (
     '<svg viewBox="0 0 32 32" fill="none" aria-hidden="true" focusable="false">'
     '<path d="M16 2.6 27.5 9.3v13.4L16 29.4 4.5 22.7V9.3z" stroke="currentColor" '
-    'stroke-width="2" stroke-linejoin="round"/>'
+    'stroke-width="2.4" stroke-linejoin="round"/>'
     '<path d="M11.5 13h9M11.5 16.5h9M11.5 20h5.5" stroke="currentColor" '
-    'stroke-width="2" stroke-linecap="round"/></svg>'
+    'stroke-width="2.4" stroke-linecap="round"/></svg>'
+)
+
+SQUIGGLE = (
+    '<div class="squiggle"><svg viewBox="0 0 1200 14" preserveAspectRatio="none" aria-hidden="true">'
+    '<path d="M0 7c25-8 50 8 75 0s50-8 75 0 50 8 75 0 50-8 75 0 50 8 75 0 50-8 75 0 50 8 75 0 '
+    '50-8 75 0 50 8 75 0 50-8 75 0 50 8 75 0 50-8 75 0 50 8 75 0 50-8 75 0 50 8 75 0" '
+    'stroke="currentColor" stroke-width="3" fill="none"/></svg></div>'
 )
 
 
@@ -59,22 +66,32 @@ def masthead():
   <div class="wrap top-in">
     <a class="mark" href="index.html">{LOGO}<span>Awesome Intune Tools</span></a>
     <nav class="top-links" aria-label="Main">
-      <a href="index.html#results">Browse tools</a>
+      <a href="index.html#directory">Browse</a>
       <a href="sponsor.html">Sponsor</a>
-      <a href="{REPO}">GitHub</a>
-      <a href="submit.html" class="cta">Submit a tool</a>
+      <a href="{REPO}" rel="noopener">GitHub</a>
+      <a href="submit.html" class="btn btn-inverted">Submit a tool</a>
     </nav>
   </div>
 </header>"""
 
 
 def footer():
-    return f"""<footer class="foot">
+    return f"""{SQUIGGLE}
+<footer class="foot">
   <div class="wrap">
     <div class="foot-grid">
       <div>
         <h3>Awesome Intune Tools</h3>
-        <p>{len(TOOLS)} community-built tools for Microsoft Intune administrators, kept current and link-checked weekly.</p>
+        <p>{len(TOOLS)} community-built tools for Microsoft Intune administrators. Reviewed by hand, link-checked every week.</p>
+      </div>
+      <div>
+        <h3>Browse</h3>
+        <ul>
+          <li><a href="index.html#directory">All tools</a></li>
+          <li><a href="index.html#troubleshooting">Troubleshooting</a></li>
+          <li><a href="index.html#packaging">App packaging</a></li>
+          <li><a href="index.html#apple">macOS &amp; Apple</a></li>
+        </ul>
       </div>
       <div>
         <h3>Contribute</h3>
@@ -85,9 +102,9 @@ def footer():
         </ul>
       </div>
       <div>
-        <h3>Support the project</h3>
+        <h3>Support</h3>
         <ul>
-          <li><a href="sponsor.html">Sponsorship options</a></li>
+          <li><a href="sponsor.html">Sponsorship</a></li>
           <li><a href="https://github.com/sponsors/{OWNER}" rel="noopener">GitHub Sponsors</a></li>
         </ul>
       </div>
@@ -118,11 +135,11 @@ def head(title, desc, path, extra=""):
 <meta name="twitter:title" content="{e(title)}">
 <meta name="twitter:description" content="{e(desc)}">
 <meta name="twitter:image" content="{SITE}og-image.svg">
-<meta name="theme-color" content="#141B26">
+<meta name="theme-color" content="#1F1633">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 {extra}"""
 
@@ -191,11 +208,11 @@ def json_ld():
 def card(t):
     c = CAT_BY_ID[t["category"]]
     text = f"{t['name']} {t['author']} {t['desc']} {c['name']}".lower()
-    return f"""<article class="tool" data-cat="{e(t['category'])}" data-kind="{e(t['kind'])}" data-text="{e(text)}">
+    return f"""<article class="tool" data-cat="{e(t['category'])}" data-text="{e(text)}">
 <h3><a href="{e(t['url'])}" rel="noopener">{e(t['name'])}</a></h3>
 <p class="by">{e(t['author'])}</p>
 <p class="desc">{e(t['desc'])}</p>
-<p class="meta"><span class="kind kind-{e(t['kind'])}">{e(KIND_LABEL[t['kind']])}</span><span class="sep">/</span><span>{e(host(t['url']))}</span></p>
+<p class="meta"><span class="kind kind-{e(t['kind'])}">{e(KIND_LABEL[t['kind']])}</span><span class="src">{e(host(t['url']))}</span></p>
 </article>"""
 
 
@@ -209,7 +226,6 @@ def build_index():
 <header class="cat-head">
 <h2>{e(c['name'])}</h2>
 <p>{e(c['blurb'])}</p>
-<span class="count">{len(items)}</span>
 </header>
 <div class="grid">
 {chr(10).join(card(t) for t in items)}
@@ -218,7 +234,7 @@ def build_index():
 
     chips = "\n".join(
         f'<button class="chip" data-filter="{e(c["id"])}" type="button">{e(c["name"])}'
-        f' <span>{len(tools_in(c["id"]))}</span></button>' for c in CATS)
+        f' <b>{len(tools_in(c["id"]))}</b></button>' for c in CATS)
     nav = "\n".join(
         f'<li><a href="#{e(c["id"])}">{e(c["name"])}</a><span>{len(tools_in(c["id"]))}</span></li>'
         for c in CATS)
@@ -232,19 +248,21 @@ def build_index():
       "index.html", json_ld())}
 </head>
 <body>
-<a class="skip" href="#results">Skip to the tools</a>
+<a class="skip" href="#directory">Skip to the tools</a>
 {masthead()}
 
 <section class="hero">
   <div class="wrap">
-    <h1>Find the right Intune tool without opening twelve tabs.</h1>
-    <p class="lede">{len(TOOLS)} community-built tools, scripts and utilities for Microsoft Intune administrators, sorted into {len(CATS)} categories and checked weekly for broken links. Start typing to narrow the list.</p>
+    <h1>Every Intune tool worth knowing, in <span class="chip-lime">one place</span></h1>
+    <p class="lede">{len(TOOLS)} community-built tools, scripts and utilities for Microsoft Intune administrators. Sorted into {len(CATS)} categories, reviewed by hand, and checked every week so the links still work.</p>
 
     <div class="search">
       <label for="q" class="sr">Search tools</label>
-      <input id="q" type="search" autocomplete="off" spellcheck="false"
-             placeholder="Try &quot;log&quot;, &quot;winget&quot;, &quot;macOS&quot; or &quot;backup&quot;">
-      <p class="tally" id="tally" aria-live="polite">Showing all {len(TOOLS)} tools</p>
+      <div class="search-row">
+        <input id="q" type="search" autocomplete="off" spellcheck="false"
+               placeholder="Search &quot;log&quot;, &quot;winget&quot;, &quot;macOS&quot;, &quot;backup&quot;&hellip;">
+      </div>
+      <p class="tally" id="tally">Showing all {len(TOOLS)} tools</p>
     </div>
 
     <div class="chips" role="group" aria-label="Filter by category">
@@ -254,24 +272,30 @@ def build_index():
   </div>
 </section>
 
-<div class="wrap layout">
-  <aside class="rail">
-    <h2 class="rail-h">Categories</h2>
-    <ul>{nav}</ul>
-    <p class="rail-note">Updated {TODAY}. Every link is verified by an automated weekly check.</p>
-  </aside>
+<div class="directory" id="directory">
+  <div class="wrap layout">
+    <aside class="rail">
+      <p class="eyebrow">Categories</p>
+      <ul>{nav}</ul>
+      <p class="rail-note">Updated {TODAY}. Every link is verified by an automated weekly check.</p>
+    </aside>
 
-  <main id="results">
+    <main id="results">
 {chr(10).join(sections)}
-    <p class="empty" id="empty" hidden>Nothing matches that. Try a shorter word, or <button type="button" id="reset">clear the filters</button>.</p>
-  </main>
+      <p class="empty" id="empty" hidden>Nothing matches that. Try a shorter word, or <button type="button" id="reset">clear the filters</button>.</p>
+    </main>
+  </div>
 </div>
 
-<section class="band">
+<section class="band-dark">
   <div class="wrap">
+    <p class="eyebrow eyebrow-dark">Contribute</p>
     <h2>Know a tool that belongs here?</h2>
-    <p class="sub">Submissions go through a short form and land as a GitHub issue for review. Community-built tools that solve a real Intune problem are welcome, whether or not you wrote them.</p>
-    <p><a class="btn" href="submit.html">Submit a tool</a> <a class="btn btn-quiet" href="sponsor.html">Sponsor the project</a></p>
+    <p class="sub">Submissions take a minute and land as a GitHub issue for review. Community-built tools that solve a real Intune problem are welcome, whether or not you wrote them.</p>
+    <div class="band-actions">
+      <a class="btn btn-inverted" href="submit.html">Submit a tool</a>
+      <a class="btn btn-ghost-dark" href="sponsor.html">Sponsor the project</a>
+    </div>
   </div>
 </section>
 
@@ -295,80 +319,117 @@ def build_submit():
 </head>
 <body>
 {masthead()}
-<main class="wrap form-page">
-  <h1>Submit a tool</h1>
-  <p class="intro">Fill this in and it opens a pre-filled issue on GitHub for review. Nothing is published
-  automatically. You need a free GitHub account so there is a record of who suggested what and somewhere
-  to ask follow-up questions.</p>
-
-  <form class="form" id="submitForm" novalidate>
-    <div class="field">
-      <label for="tool_name">Tool name</label>
-      <input id="tool_name" name="tool_name" required maxlength="80" placeholder="IntuneCD">
-      <p class="err" id="err_tool_name" hidden>Add the tool's name.</p>
+<main class="page">
+  <div class="wrap">
+    <div class="page-head">
+      <p class="eyebrow">Contribute</p>
+      <h1>Submit a tool</h1>
+      <p class="intro">Fill this in and it opens a pre-filled issue on GitHub for review. Nothing is
+      published automatically, and you can edit everything before you send it.</p>
     </div>
 
-    <div class="field">
-      <label for="tool_url">Link</label>
-      <p class="hint">The canonical repository or project page, not a marketing landing page.</p>
-      <input id="tool_url" name="tool_url" type="url" required placeholder="https://github.com/owner/repo">
-      <p class="err" id="err_tool_url" hidden>Add a full link starting with https://</p>
+    <div class="split">
+      <form class="form-card" id="submitForm" novalidate>
+        <fieldset class="fieldset">
+          <legend>The tool</legend>
+          <div class="row-2">
+            <div class="field">
+              <label for="tool_name">Tool name</label>
+              <input id="tool_name" name="tool_name" required maxlength="80" placeholder="IntuneCD">
+              <p class="err" id="err_tool_name" hidden>Add the tool's name.</p>
+            </div>
+            <div class="field">
+              <label for="author">Author or maintainer</label>
+              <input id="author" name="author" required maxlength="80" placeholder="Name or GitHub handle">
+              <p class="err" id="err_author" hidden>Add the author's name or handle.</p>
+            </div>
+          </div>
+          <div class="field">
+            <label for="tool_url">Link</label>
+            <p class="hint">The canonical repository or project page, not a marketing landing page.</p>
+            <input id="tool_url" name="tool_url" type="url" required placeholder="https://github.com/owner/repo">
+            <p class="err" id="err_tool_url" hidden>Add a full link starting with https://</p>
+          </div>
+        </fieldset>
+
+        <fieldset class="fieldset">
+          <legend>Where it fits</legend>
+          <div class="row-2">
+            <div class="field">
+              <label for="category">Category</label>
+              <select id="category" name="category" required>
+                <option value="">Choose one</option>
+                {opts}
+              </select>
+              <p class="err" id="err_category" hidden>Pick the closest category.</p>
+            </div>
+            <div class="field">
+              <label for="kind">Type</label>
+              <select id="kind" name="kind" required>
+                <option value="repo">Open source project</option>
+                <option value="web">Hosted web tool</option>
+                <option value="guide">Guide or blog post</option>
+              </select>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="fieldset">
+          <legend>Why it is useful</legend>
+          <div class="field">
+            <label for="description">What problem does it solve?</label>
+            <p class="hint">One or two plain sentences. Describe the practical value, not the feature list.</p>
+            <textarea id="description" name="description" required maxlength="400"
+                      placeholder="Backs up, documents and deploys Intune configuration from source control."></textarea>
+            <p class="count"><span id="count_description">0</span>/400</p>
+            <p class="err" id="err_description" hidden>Add a short description.</p>
+          </div>
+          <div class="field">
+            <label for="notes">Anything else? <span class="opt">Optional</span></label>
+            <textarea id="notes" name="notes" maxlength="400"
+                      placeholder="How it differs from tools already listed, whether you are the author, licensing notes."></textarea>
+            <p class="count"><span id="count_notes">0</span>/400</p>
+          </div>
+        </fieldset>
+
+        <div class="form-actions">
+          <button class="btn btn-primary" type="submit">Review on GitHub</button>
+          <p class="note">Opens GitHub with the issue filled in. You press submit there.</p>
+        </div>
+      </form>
+
+      <aside class="aside-sticky">
+        <div>
+          <div class="preview-head">
+            <p class="eyebrow" style="margin:0">Live preview</p>
+          </div>
+          <article class="tool" id="preview">
+            <h3><a href="#" id="pv_name">Your tool name</a></h3>
+            <p class="by" id="pv_author">Author</p>
+            <p class="desc" id="pv_desc">A one-sentence description of what problem it solves will appear here as you type.</p>
+            <p class="meta"><span class="kind kind-repo" id="pv_kind">Open source</span><span class="src" id="pv_src">example.com</span></p>
+          </article>
+        </div>
+
+        <div class="panel">
+          <h2>What happens next</h2>
+          <ol class="steps">
+            <li><strong>Review.</strong> Checked by hand: the link has to resolve, the tool has to work on a
+            current tenant, and it has to be documented well enough for someone else to adopt.</li>
+            <li><strong>Decision.</strong> Approved tools appear on the site and in the README on the next
+            build. If it is declined you get a reason on the issue, not a silent close.</li>
+            <li><strong>Upkeep.</strong> Links are re-checked weekly. Entries that break get fixed or removed.</li>
+          </ol>
+        </div>
+
+        <div class="panel">
+          <h2>Rather use a pull request?</h2>
+          <p>Both the site and the README are generated from a single data file. Add one JSON object and open a PR.</p>
+          <p><a href="{REPO}/blob/main/data/tools.json" rel="noopener">Edit data/tools.json</a></p>
+        </div>
+      </aside>
     </div>
-
-    <div class="field">
-      <label for="author">Author or maintainer</label>
-      <input id="author" name="author" required maxlength="80" placeholder="Name or GitHub handle">
-      <p class="err" id="err_author" hidden>Add the author's name or handle.</p>
-    </div>
-
-    <div class="field">
-      <label for="category">Category</label>
-      <select id="category" name="category" required>
-        <option value="">Choose one</option>
-        {opts}
-      </select>
-      <p class="err" id="err_category" hidden>Pick the closest category.</p>
-    </div>
-
-    <div class="field">
-      <label for="kind">Type</label>
-      <select id="kind" name="kind" required>
-        <option value="repo">Open source project</option>
-        <option value="web">Hosted web tool</option>
-        <option value="guide">Guide or blog post</option>
-      </select>
-    </div>
-
-    <div class="field">
-      <label for="description">What problem does it solve?</label>
-      <p class="hint">One or two plain sentences. Describe the practical value, not the feature list.</p>
-      <textarea id="description" name="description" required maxlength="400"
-                placeholder="Backs up, documents and deploys Intune configuration from source control."></textarea>
-      <p class="err" id="err_description" hidden>Add a short description.</p>
-    </div>
-
-    <div class="field">
-      <label for="notes">Anything else? <span class="hint" style="display:inline">Optional</span></label>
-      <textarea id="notes" name="notes" maxlength="400"
-                placeholder="How it differs from similar tools already listed, whether you are the author, licensing notes."></textarea>
-    </div>
-
-    <button class="btn" type="submit">Review on GitHub</button>
-    <p class="form-note">This opens GitHub with the issue already filled in. You still press submit there,
-    so you can edit anything first.</p>
-  </form>
-
-  <h2 class="rail-h" style="margin-top:2.6rem;font-size:.95rem;color:var(--text)">What happens next</h2>
-  <ol class="steps">
-    <li><strong>Review.</strong> Every submission is checked by hand: the link has to resolve, the tool has to
-    work on a current tenant, and it has to be documented well enough for someone else to adopt.</li>
-    <li><strong>Decision.</strong> Approved tools are added to the dataset and appear on the site and in the
-    README on the next build. If it is declined you get a reason on the issue, not a silent close.</li>
-    <li><strong>Upkeep.</strong> Links are re-checked weekly. Entries that break get fixed or removed.</li>
-  </ol>
-
-  <p class="form-note">Prefer to skip the form? Open a pull request against
-  <a href="{REPO}/blob/main/data/tools.json" rel="noopener">data/tools.json</a> directly.</p>
+  </div>
 </main>
 {footer()}
 <script src="submit.js" defer></script>
@@ -388,46 +449,67 @@ def build_sponsor():
 </head>
 <body>
 {masthead()}
-<main class="wrap form-page">
-  <h1>Sponsor this project</h1>
-  <p class="intro">This directory is maintained independently and costs time rather than money: reviewing
-  submissions, verifying links, testing tools, and keeping {len(TOOLS)} entries accurate as the Intune
-  ecosystem shifts. Sponsorship pays for that time and keeps the list free and open.</p>
-
-  <h2 style="font-size:1.2rem;margin:0 0 .6rem">Who reads this</h2>
-  <p class="intro">Intune consultants, managed service providers, and in-house endpoint administrators \u2014
-  people who evaluate and buy endpoint management tooling, or recommend it to the organisations they
-  work for.</p>
-
-  <div class="band-grid" style="margin:2.4rem 0">
-    <div>
-      <h3>Supporter</h3>
-      <p>Your name or company listed in the README and in the site footer, with a link.</p>
+<main class="page">
+  <div class="wrap">
+    <div class="page-head">
+      <p class="eyebrow">Support the project</p>
+      <h1>Sponsor this directory</h1>
+      <p class="intro">This list is maintained independently. It costs time rather than money: reviewing
+      submissions, verifying links, testing tools, and keeping {len(TOOLS)} entries accurate as the Intune
+      ecosystem shifts. Sponsorship pays for that time and keeps the directory free and open.</p>
     </div>
-    <div>
-      <h3>Project sponsor</h3>
-      <p>Logo placement on the homepage and sponsor page, plus the README listing.</p>
+
+    <div class="callout">
+      <h2>Who reads this</h2>
+      <p>Intune consultants, managed service providers, and in-house endpoint administrators. People who
+      evaluate and buy endpoint management tooling, or recommend it to the organisations they work for.</p>
     </div>
-    <div>
-      <h3>Custom</h3>
-      <p>Something else in mind \u2014 a specific category, a piece of tooling, an integration? Get in touch
-      and we can talk it through.</p>
+
+    <div class="tiers">
+      <div class="tier">
+        <h3>Supporter</h3>
+        <p>For individuals and small teams who find the list useful and want it to keep going.</p>
+        <ul>
+          <li>Name or company in the README</li>
+          <li>Link in the site footer</li>
+        </ul>
+      </div>
+      <div class="tier tier-featured">
+        <h3>Project sponsor</h3>
+        <p>For companies building endpoint tooling or serving Intune admins directly.</p>
+        <ul>
+          <li>Logo on the homepage</li>
+          <li>Logo and link on this page</li>
+          <li>README listing</li>
+        </ul>
+      </div>
+      <div class="tier">
+        <h3>Custom</h3>
+        <p>Something else in mind? A specific category, a piece of tooling, an integration.</p>
+        <ul>
+          <li>Get in touch and we can talk it through</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout">
+      <h2>What sponsorship does not buy</h2>
+      <p>Placement in the list itself. Tools are included on merit and every entry is reviewed the same
+      way, whether a sponsor submitted it or not. Sponsors are shown as sponsors, in their own clearly
+      labelled section. A directory nobody trusts is not worth sponsoring, so this line stays firm.</p>
+    </div>
+
+    <div class="band-actions" style="margin-top:40px">
+      <a class="btn btn-primary" href="https://github.com/sponsors/{OWNER}" rel="noopener">Sponsor on GitHub</a>
+      <a class="btn btn-outline" href="mailto:Deep030899@gmail.com?subject=Sponsoring%20Awesome%20Intune%20Tools">Email about sponsorship</a>
+    </div>
+
+    <div class="callout" style="margin-top:56px">
+      <h2>Current sponsors</h2>
+      <p>None yet. This space is open, and if your company builds endpoint tooling or serves Intune
+      admins, you would be the first.</p>
     </div>
   </div>
-
-  <h2 style="font-size:1.2rem;margin:0 0 .6rem">What sponsorship does not buy</h2>
-  <p class="intro">Placement in the list itself. Tools are included on merit and every entry is reviewed the
-  same way, whether a sponsor submitted it or not. Sponsors are shown as sponsors, in their own section,
-  clearly labelled. A directory nobody trusts is not worth sponsoring, so this line stays firm.</p>
-
-  <p style="margin-top:2rem">
-    <a class="btn" href="https://github.com/sponsors/{OWNER}" rel="noopener">Sponsor on GitHub</a>
-    <a class="btn btn-quiet" href="mailto:Deep030899@gmail.com?subject=Sponsoring%20Awesome%20Intune%20Tools">Email about sponsorship</a>
-  </p>
-
-  <h2 style="font-size:1.2rem;margin:2.8rem 0 .6rem">Current sponsors</h2>
-  <p class="intro">None yet \u2014 this space is open. If your company builds endpoint tooling or serves Intune
-  admins, you would be the first.</p>
 </main>
 {footer()}
 </body>
