@@ -1,0 +1,98 @@
+name: Tool submission
+description: Suggest a tool for the Awesome Intune Tools directory
+title: "Tool submission: "
+labels: ["tool submission"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for suggesting a tool. Submissions are reviewed by hand — the link has to
+        resolve, the tool has to work on a current tenant, and it has to be documented well
+        enough for someone else to adopt it.
+
+        You can also fill this in via the [form on the website](https://deepshah0308.github.io/awesome-intunetools/submit.html).
+
+  - type: input
+    id: tool_name
+    attributes:
+      label: Tool name
+      placeholder: IntuneCD
+    validations:
+      required: true
+
+  - type: input
+    id: tool_url
+    attributes:
+      label: Link
+      description: The canonical repository or project page, not a marketing landing page.
+      placeholder: https://github.com/owner/repo
+    validations:
+      required: true
+
+  - type: input
+    id: author
+    attributes:
+      label: Author or maintainer
+      placeholder: Name or GitHub handle
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - device-management
+        - troubleshooting
+        - packaging
+        - autopilot
+        - baselines
+        - apple
+        - android
+        - graph
+        - reporting
+        - remediation
+        - backup
+        - security
+        - automation
+        - misc
+    validations:
+      required: true
+
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Type
+      options:
+        - repo
+        - web
+        - guide
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: What problem does it solve?
+      description: One or two plain sentences describing the practical value.
+      placeholder: Backs up, documents and deploys Intune configuration from source control.
+    validations:
+      required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything else?
+      description: How it differs from similar tools already listed, whether you are the author, licensing notes.
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before submitting
+      options:
+        - label: The link works and points at the canonical project page.
+          required: true
+        - label: This is a free or community/open-source project.
+          required: true
+        - label: It is not already in the list.
+          required: true
