@@ -1047,6 +1047,14 @@
       "category": "device-management",
       "kind": "repo",
       "desc": "WPF GUI that caches every policy type locally and full-text searches across them, including decoded PowerShell script content."
+    },
+    {
+      "name": "GPORais",
+      "author": "Islam Rais",
+      "url": "https://gporais.com/en-us/",
+      "category": "misc",
+      "kind": "web",
+      "desc": "Searches close to 10,000 Group Policy settings by intent or registry key across 16 sources, showing the matching Intune CSP mapping and exporting .reg, PowerShell or GPO backups."
     }
   ]
 }

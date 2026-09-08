@@ -6,7 +6,7 @@ A curated directory of community tools, scripts and utilities for Microsoft Intu
 
 **Browse it as a searchable website: [deepshah0308.github.io/awesome-intunetools](https://deepshah0308.github.io/awesome-intunetools/)**
 
-122 tools across 14 categories, link-checked weekly. [Submit a tool](https://deepshah0308.github.io/awesome-intunetools/submit.html) · [Sponsor the project](https://deepshah0308.github.io/awesome-intunetools/sponsor.html)
+123 tools across 14 categories, link-checked weekly. [Submit a tool](https://deepshah0308.github.io/awesome-intunetools/submit.html) · [Sponsor the project](https://deepshah0308.github.io/awesome-intunetools/sponsor.html)
 
 ## Contents
 
@@ -26,7 +26,7 @@ A curated directory of community tools, scripts and utilities for Microsoft Intu
 - [Backup, Restore & Documentation](#backup-restore-documentation) (4)
 - [Security & Hardening](#security-hardening) (5)
 - [Automation & Assignments](#automation-assignments) (7)
-- [Utilities & Discovery](#utilities-discovery) (6)
+- [Utilities & Discovery](#utilities-discovery) (7)
 
 ## How to use this list
 
@@ -275,6 +275,7 @@ Generators, navigation helpers, and directories of further tooling.
 - **[Toolbox Rundown — Simon Skotheimsvik](https://skotheimsvik.no/toolbox-rundown/)** — Curated rundown of endpoint management tools, useful as a second discovery hub alongside this list.
 - **[Intune Wall of Tools — IntuneQLinks](https://intuneqlinks.net/wall-of-tools)** — Community hub cataloguing Intune settings references, community content, and a broad tool directory.
 - **[Awesome Intune — awesomeintune.com](https://www.awesomeintune.com/)** — Large searchable directory of free Intune tools and scripts with source-code risk scanning on listed projects.
+- **[GPORais — Islam Rais](https://gporais.com/en-us/)** — Searches close to 10,000 Group Policy settings by intent or registry key across 16 sources, showing the matching Intune CSP mapping and exporting .reg, PowerShell or GPO backups.
 
 ---
 
