@@ -1,0 +1,67 @@
+name: Approve tool submission
+
+# A maintainer comments /approve on a submission issue. The entry is
+# re-validated, added to data/tools.json, and the site is rebuilt in the
+# same commit (pushes made with GITHUB_TOKEN do not trigger other workflows,
+# so the build cannot be left to the build workflow).
+
+on:
+  issue_comment:
+    types: [created]
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  approve:
+    if: >
+      !github.event.issue.pull_request &&
+      startsWith(github.event.comment.body, '/approve') &&
+      contains(fromJSON('["OWNER","MEMBER","COLLABORATOR"]'), github.event.comment.author_association)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Validate and add the entry
+        id: add
+        working-directory: scripts
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python approve.py
+
+      - name: Report a failed approval
+        if: failure()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if [ -f approve-error.md ]; then
+            gh issue comment "${{ github.event.issue.number }}" --body-file approve-error.md
+          else
+            gh issue comment "${{ github.event.issue.number }}" \
+              --body "The approval could not be completed. See the [workflow run](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})."
+          fi
+
+      - name: Commit the addition
+        env:
+          NUM: ${{ github.event.issue.number }}
+          TOOL: ${{ github.event.issue.title }}
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/tools.json README.md docs/
+          git diff --staged --quiet || git commit -m "${TOOL} (closes #${NUM})"
+          git push
+
+      - name: Comment and close
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NUM: ${{ github.event.issue.number }}
+        run: |
+          gh issue comment "$NUM" --body-file approve-result.md
+          gh issue edit "$NUM" --add-label "added" --remove-label "needs review" --remove-label "checks passed" || true
+          gh issue close "$NUM" --reason completed

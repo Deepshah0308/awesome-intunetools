@@ -1,0 +1,58 @@
+name: Triage tool submission
+
+on:
+  issues:
+    types: [opened, edited, reopened]
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  triage:
+    # Only run on submissions, not on every issue in the repo.
+    if: contains(github.event.issue.title, 'Tool submission') || contains(join(github.event.issue.labels.*.name, ','), 'tool submission')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Run automated checks
+        id: checks
+        working-directory: scripts
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python triage.py
+          echo "verdict=$(cat ../triage-verdict.txt)" >> "$GITHUB_OUTPUT"
+
+      - name: Post the report
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh issue comment "${{ github.event.issue.number }}" --body-file triage-comment.md
+        working-directory: ${{ github.workspace }}
+
+      - name: Ensure labels exist
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh label create "checks passed" --color 0E8A16 --description "Automated checks passed" --force
+          gh label create "needs review"  --color FBCA04 --description "Automated checks raised points for a human" --force
+          gh label create "checks failed" --color B60205 --description "Automated checks found blocking issues" --force
+          gh label create "added"         --color 5319E7 --description "Merged into the directory" --force
+
+      - name: Label the outcome
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VERDICT: ${{ steps.checks.outputs.verdict }}
+          NUM: ${{ github.event.issue.number }}
+        run: |
+          gh issue edit "$NUM" --remove-label "checks passed" --remove-label "needs review" --remove-label "checks failed" || true
+          case "$VERDICT" in
+            pass)   gh issue edit "$NUM" --add-label "checks passed" ;;
+            review) gh issue edit "$NUM" --add-label "needs review" ;;
+            fail)   gh issue edit "$NUM" --add-label "checks failed" ;;
+          esac
