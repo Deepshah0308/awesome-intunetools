@@ -793,6 +793,14 @@
       "desc": "Azure Function solution that enriches Intune inventory data for reporting and security use."
     },
     {
+      "name": "M365 License and OneDrive Waste Finder",
+      "author": "Aymerick Victoire",
+      "url": "https://github.com/AymerickVic/m365-license-onedrive-waste-finder",
+      "category": "reporting",
+      "kind": "repo",
+      "desc": "Read-only Microsoft Graph audit that prices the licenses still assigned to disabled accounts in EUR per month and per year and reports the state of each account's OneDrive, with an HTML report and CSV export, no writes and no deprecated modules."
+    },
+    {
       "name": "Endpoint Analytics Remediation Scripts",
       "author": "Jannik Reinhard",
       "url": "https://github.com/JayRHa/EndpointAnalyticsRemediationScripts",
