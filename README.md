@@ -6,7 +6,7 @@ A curated directory of community tools, scripts and utilities for Microsoft Intu
 
 **Browse it as a searchable website: [deepshah0308.github.io/awesome-intunetools](https://deepshah0308.github.io/awesome-intunetools/)**
 
-123 tools across 14 categories, link-checked weekly. [Submit a tool](https://deepshah0308.github.io/awesome-intunetools/submit.html) · [Sponsor the project](https://deepshah0308.github.io/awesome-intunetools/sponsor.html)
+124 tools across 14 categories, link-checked weekly. [Submit a tool](https://deepshah0308.github.io/awesome-intunetools/submit.html) · [Sponsor the project](https://deepshah0308.github.io/awesome-intunetools/sponsor.html)
 
 ## Contents
 
@@ -21,7 +21,7 @@ A curated directory of community tools, scripts and utilities for Microsoft Intu
 - [macOS & Apple](#macos-apple) (15)
 - [Android & Cross-platform](#android-cross-platform) (3)
 - [Graph API & PowerShell](#graph-api-powershell) (8)
-- [Reporting & Analytics](#reporting-analytics) (8)
+- [Reporting & Analytics](#reporting-analytics) (9)
 - [Remediations & Scripts](#remediations-scripts) (9)
 - [Backup, Restore & Documentation](#backup-restore-documentation) (4)
 - [Security & Hardening](#security-hardening) (5)
@@ -219,6 +219,7 @@ Dashboards, compliance exports, and executive-facing reporting.
 - **[M365-Assess — Galvnyz](https://github.com/Galvnyz/M365-Assess)** — Runs hundreds of automated checks across multiple compliance frameworks and produces an interactive HTML report locally.
 - **[IntuneComplianceReport — DanStutz](https://github.com/DanStutz/IntuneComplianceReport)** — Exports device compliance to a wide CSV via Graph, one row per device with each policy as a column.
 - **[Enhanced Inventory for Intune — Jan Ketil Skanke](https://msendpointmgr.com/2022/01/17/securing-intune-enhanced-inventory-with-azure-function/)** — Azure Function solution that enriches Intune inventory data for reporting and security use.
+- **[M365 License and OneDrive Waste Finder — Aymerick Victoire](https://github.com/AymerickVic/m365-license-onedrive-waste-finder)** — Read-only Microsoft Graph audit that prices the licenses still assigned to disabled accounts in EUR per month and per year and reports the state of each account's OneDrive, with an HTML report and CSV export, no writes and no deprecated modules.
 
 ## Remediations & Scripts
 
