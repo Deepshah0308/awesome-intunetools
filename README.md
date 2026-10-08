@@ -6,7 +6,7 @@ A curated directory of community tools, scripts and utilities for Microsoft Intu
 
 **Browse it as a searchable website: [deepshah0308.github.io/awesome-intunetools](https://deepshah0308.github.io/awesome-intunetools/)**
 
-124 tools across 14 categories, link-checked weekly. [Submit a tool](https://deepshah0308.github.io/awesome-intunetools/submit.html) · [Sponsor the project](https://deepshah0308.github.io/awesome-intunetools/sponsor.html)
+123 tools across 14 categories, link-checked weekly. [Submit a tool](https://deepshah0308.github.io/awesome-intunetools/submit.html) · [Sponsor the project](https://deepshah0308.github.io/awesome-intunetools/sponsor.html)
 
 ## Contents
 
@@ -20,7 +20,7 @@ A curated directory of community tools, scripts and utilities for Microsoft Intu
 - [Baselines & Configuration as Code](#baselines-configuration-as-code) (6)
 - [macOS & Apple](#macos-apple) (15)
 - [Android & Cross-platform](#android-cross-platform) (3)
-- [Graph API & PowerShell](#graph-api-powershell) (8)
+- [Graph API & PowerShell](#graph-api-powershell) (7)
 - [Reporting & Analytics](#reporting-analytics) (9)
 - [Remediations & Scripts](#remediations-scripts) (9)
 - [Backup, Restore & Documentation](#backup-restore-documentation) (4)
@@ -198,7 +198,6 @@ Android Enterprise, Linux, and multi-platform management.
 
 SDKs, sample libraries, and scripting interfaces for the Intune Graph API.
 
-- **[PowerShell Intune Samples — Microsoft Graph](https://github.com/microsoftgraph/powershell-intune-samples)** — Microsoft's long-standing sample library showing how to reach every Intune Graph resource from PowerShell.
 - **[Microsoft Graph PowerShell Intune Samples — Microsoft](https://github.com/microsoft/mggraph-intune-samples)** — Current sample set built for the Microsoft Graph PowerShell SDK, replacing the older Intune-specific module.
 - **[Intune PowerShell SDK — Microsoft](https://github.com/microsoft/Intune-PowerShell-SDK)** — Native PowerShell cmdlets wrapping the Intune Graph API for IT Pro scenario automation.
 - **[GraphXray — Merill Fernando](https://github.com/merill/graphxray)** — Watches actions you take in the Entra or Intune portal and shows the equivalent Graph calls and PowerShell to script them.

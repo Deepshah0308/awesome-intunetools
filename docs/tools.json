@@ -665,14 +665,6 @@
       "desc": "Definitions for managing Windows, macOS, Android, and iOS applications in Intune from one place."
     },
     {
-      "name": "PowerShell Intune Samples",
-      "author": "Microsoft Graph",
-      "url": "https://github.com/microsoftgraph/powershell-intune-samples",
-      "category": "graph",
-      "kind": "repo",
-      "desc": "Microsoft's long-standing sample library showing how to reach every Intune Graph resource from PowerShell."
-    },
-    {
       "name": "Microsoft Graph PowerShell Intune Samples",
       "author": "Microsoft",
       "url": "https://github.com/microsoft/mggraph-intune-samples",
