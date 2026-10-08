@@ -6,7 +6,7 @@ A curated directory of community tools, scripts and utilities for Microsoft Intu
 
 **Browse it as a searchable website: [deepshah0308.github.io/awesome-intunetools](https://deepshah0308.github.io/awesome-intunetools/)**
 
-123 tools across 14 categories, link-checked weekly. [Submit a tool](https://deepshah0308.github.io/awesome-intunetools/submit.html) · [Sponsor the project](https://deepshah0308.github.io/awesome-intunetools/sponsor.html)
+124 tools across 14 categories, link-checked weekly. [Submit a tool](https://deepshah0308.github.io/awesome-intunetools/submit.html) · [Sponsor the project](https://deepshah0308.github.io/awesome-intunetools/sponsor.html)
 
 ## Contents
 
@@ -14,7 +14,7 @@ A curated directory of community tools, scripts and utilities for Microsoft Intu
 - [Contributing](#contributing)
 - [Sponsorship](#sponsorship)
 - [Device Management](#device-management) (11)
-- [Troubleshooting & Debugging](#troubleshooting-debugging) (14)
+- [Troubleshooting & Debugging](#troubleshooting-debugging) (15)
 - [App Packaging & Deployment](#app-packaging-deployment) (19)
 - [Autopilot & Provisioning](#autopilot-provisioning) (7)
 - [Baselines & Configuration as Code](#baselines-configuration-as-code) (6)
@@ -118,6 +118,7 @@ Log readers, diagnostics collectors, and device-level investigation tools.
 - **[Intune One Data Collector — markstan](https://github.com/markstan/IntuneOneDataCollector)** — Automated collector that gathers the full diagnostic data set Microsoft support asks for when opening an Intune case.
 - **[IntuneWUTools — markstan](https://github.com/markstan/IntuneWUTools)** — Tools for troubleshooting Windows Update behaviour on Intune-managed clients.
 - **[MHimken Toolbox — MHimken](https://github.com/MHimken/toolbox)** — Collection of endpoint management scripts covering Autopilot diagnostics, ESP inspection, and client-side troubleshooting.
+- **[Where Them Logs App — Scott McAllister](https://wherethemlogs.app/)** — Look up where an app writes its logs on Windows, macOS and Linux, including IME and Company Portal, with paths kept verbatim.
 
 ## App Packaging & Deployment
 
