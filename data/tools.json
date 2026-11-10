@@ -1063,6 +1063,30 @@
       "category": "troubleshooting",
       "kind": "web",
       "desc": "Look up where an app writes its logs on Windows, macOS and Linux, including IME and Company Portal, with paths kept verbatim."
+    },
+    {
+      "name": "Endpoint Quorum",
+      "author": "Wasaf Abbasi",
+      "url": "https://github.com/Abbasi26/endpoint-quorum",
+      "category": "device-management",
+      "kind": "repo",
+      "desc": "Read-only PowerShell cross-check of Intune, Entra ID and Defender for Endpoint device state, to find devices the three sources disagree about."
+    },
+    {
+      "name": "logsieve",
+      "author": "Wasaf Abbasi",
+      "url": "https://github.com/Abbasi26/logsieve",
+      "category": "troubleshooting",
+      "kind": "repo",
+      "desc": "Builds one timeline from ConfigMgr, Intune and Windows logs, with known error codes and reversible redaction of identifiers."
+    },
+    {
+      "name": "Secure App Factory",
+      "author": "Wasaf Abbasi",
+      "url": "https://github.com/Abbasi26/secure-app-factory",
+      "category": "packaging",
+      "kind": "repo",
+      "desc": "Packages Win32 apps for Intune only when the vendor installer matches its pinned SHA-256 and Authenticode signer."
     }
   ]
 }
