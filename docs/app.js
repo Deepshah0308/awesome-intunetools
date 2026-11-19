@@ -7,7 +7,7 @@
   var reset = document.getElementById('reset');
   var chips = Array.prototype.slice.call(document.querySelectorAll('.chip'));
   var sections = Array.prototype.slice.call(document.querySelectorAll('.cat'));
-  var tools = Array.prototype.slice.call(document.querySelectorAll('.tool'));
+  var tools = Array.prototype.slice.call(document.querySelectorAll('#results .tool'));
   var total = tools.length;
   var cat = 'all';
 

@@ -216,6 +216,24 @@ def card(t):
 </article>"""
 
 
+def hero_card(t):
+    """Same visual as a directory card but linkless: the stack is decorative."""
+    return f"""<article class="tool">
+<h3>{e(t['name'])}</h3>
+<p class="by">{e(t['author'])}</p>
+<p class="desc">{e(t['desc'])}</p>
+<p class="meta"><span class="kind kind-{e(t['kind'])}">{e(KIND_LABEL[t['kind']])}</span><span class="src">{e(host(t['url']))}</span></p>
+</article>"""
+
+
+def hero_stack():
+    by_name = {t["name"]: t for t in TOOLS}
+    picks = [by_name[n] for n in ("IntuneCD", "Intune Debug Toolkit", "OpenIntuneBaseline")
+             if n in by_name]
+    picks += [t for t in TOOLS if t not in picks][:3 - len(picks)]
+    return "\n".join(hero_card(t) for t in picks[:3])
+
+
 def build_index():
     sections = []
     for c in CATS:
@@ -252,7 +270,8 @@ def build_index():
 {masthead()}
 
 <section class="hero">
-  <div class="wrap">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
     <h1>Every Intune tool worth knowing, in <span class="chip-lime">one place</span></h1>
     <p class="lede">{len(TOOLS)} community-built tools, scripts and utilities for Microsoft Intune administrators. Sorted into {len(CATS)} categories, reviewed by hand, and checked every week so the links still work.</p>
 
@@ -265,6 +284,14 @@ def build_index():
       <p class="tally" id="tally">Showing all {len(TOOLS)} tools</p>
     </div>
 
+    </div>
+
+    <div class="hero-stack" aria-hidden="true">
+{hero_stack()}
+    </div>
+  </div>
+
+  <div class="wrap">
     <div class="chips" role="group" aria-label="Filter by category">
       <button class="chip on" data-filter="all" type="button">Everything</button>
       {chips}
