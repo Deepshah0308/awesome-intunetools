@@ -6,7 +6,7 @@ A curated directory of community tools, scripts and utilities for Microsoft Intu
 
 **Browse it as a searchable website: [deepshah0308.github.io/awesome-intunetools](https://deepshah0308.github.io/awesome-intunetools/)**
 
-127 tools across 14 categories, link-checked weekly. [Submit a tool](https://deepshah0308.github.io/awesome-intunetools/submit.html) · [Sponsor the project](https://deepshah0308.github.io/awesome-intunetools/sponsor.html)
+128 tools across 14 categories, link-checked weekly. [Submit a tool](https://deepshah0308.github.io/awesome-intunetools/submit.html) · [Sponsor the project](https://deepshah0308.github.io/awesome-intunetools/sponsor.html)
 
 ## Contents
 
@@ -15,7 +15,7 @@ A curated directory of community tools, scripts and utilities for Microsoft Intu
 - [Sponsorship](#sponsorship)
 - [Device Management](#device-management) (12)
 - [Troubleshooting & Debugging](#troubleshooting-debugging) (16)
-- [App Packaging & Deployment](#app-packaging-deployment) (20)
+- [App Packaging & Deployment](#app-packaging-deployment) (21)
 - [Autopilot & Provisioning](#autopilot-provisioning) (7)
 - [Baselines & Configuration as Code](#baselines-configuration-as-code) (6)
 - [macOS & Apple](#macos-apple) (15)
@@ -146,6 +146,7 @@ Win32 packaging, Winget pipelines, and app delivery automation.
 - **[IntuneWin Build and Extract Tool — Damien Van Robaeys](https://www.systanddeploy.com/2023/05/intunewin-build-and-extract-tool-to.html)** — GUI tool to build and, crucially, extract .intunewin packages when you need to inspect what shipped.
 - **[IntuneAppAssigner — Nick Benton](https://github.com/ennnbeee/IntuneAppAssigner)** — Bulk updates or replaces assignments across many Intune applications at once.
 - **[Secure App Factory — Wasaf Abbasi](https://github.com/Abbasi26/secure-app-factory)** — Packages Win32 apps for Intune only when the vendor installer matches its pinned SHA-256 and Authenticode signer.
+- **[AppUpdateKit — Fonfey](https://github.com/Fonfey/AppUpdateKit)** — Intune has no "Later" button for Win32 app updates and users see nothing while an installer runs as SYSTEM. AppUpdateKit adds a consent popup with postpone, a countdown, progress and result notifications and a restart prompt, and its GUI Builder writes the install, uninstall, detection and requirement scripts, so every app is packaged the same way.
 
 ## Autopilot & Provisioning
 

@@ -1087,6 +1087,14 @@
       "category": "packaging",
       "kind": "repo",
       "desc": "Packages Win32 apps for Intune only when the vendor installer matches its pinned SHA-256 and Authenticode signer."
+    },
+    {
+      "name": "AppUpdateKit",
+      "author": "Fonfey",
+      "url": "https://github.com/Fonfey/AppUpdateKit",
+      "category": "packaging",
+      "kind": "repo",
+      "desc": "Intune has no \"Later\" button for Win32 app updates and users see nothing while an installer runs as SYSTEM. AppUpdateKit adds a consent popup with postpone, a countdown, progress and result notifications and a restart prompt, and its GUI Builder writes the install, uninstall, detection and requirement scripts, so every app is packaged the same way."
     }
   ]
 }
