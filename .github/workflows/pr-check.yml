@@ -1,0 +1,36 @@
+name: Check pull request entries
+
+# The triage workflow covers submissions that arrive as issues. This covers the
+# other door: a pull request editing data/tools.json directly.
+#
+# Deliberately uses pull_request, not pull_request_target: a fork gets a
+# read-only token and this job never comments or pushes, so untrusted code in
+# the PR cannot gain write access. The failed check is the signal.
+
+on:
+  pull_request:
+    paths:
+      - 'data/tools.json'
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Validate entries added by this pull request
+        working-directory: scripts
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git show "origin/${{ github.base_ref }}:data/tools.json" > "$RUNNER_TEMP/base.json"
+          python pr_check.py "$RUNNER_TEMP/base.json"
