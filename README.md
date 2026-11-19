@@ -6,16 +6,16 @@ A curated directory of community tools, scripts and utilities for Microsoft Intu
 
 **Browse it as a searchable website: [deepshah0308.github.io/awesome-intunetools](https://deepshah0308.github.io/awesome-intunetools/)**
 
-124 tools across 14 categories, link-checked weekly. [Submit a tool](https://deepshah0308.github.io/awesome-intunetools/submit.html) · [Sponsor the project](https://deepshah0308.github.io/awesome-intunetools/sponsor.html)
+127 tools across 14 categories, link-checked weekly. [Submit a tool](https://deepshah0308.github.io/awesome-intunetools/submit.html) · [Sponsor the project](https://deepshah0308.github.io/awesome-intunetools/sponsor.html)
 
 ## Contents
 
 - [How to use this list](#how-to-use-this-list)
 - [Contributing](#contributing)
 - [Sponsorship](#sponsorship)
-- [Device Management](#device-management) (11)
-- [Troubleshooting & Debugging](#troubleshooting-debugging) (15)
-- [App Packaging & Deployment](#app-packaging-deployment) (19)
+- [Device Management](#device-management) (12)
+- [Troubleshooting & Debugging](#troubleshooting-debugging) (16)
+- [App Packaging & Deployment](#app-packaging-deployment) (20)
 - [Autopilot & Provisioning](#autopilot-provisioning) (7)
 - [Baselines & Configuration as Code](#baselines-configuration-as-code) (6)
 - [macOS & Apple](#macos-apple) (15)
@@ -99,6 +99,7 @@ Consoles, bulk operations, and lifecycle tooling for the devices in your tenant.
 - **[Intune Device Classification — MrWyss-MSFT](https://github.com/MrWyss-MSFT/IntuneDeviceClassification)** — Classifies and tags devices so dynamic Entra ID groups can be built from device characteristics rather than manual membership.
 - **[Intune Help Desk — backuploki](https://github.com/backuploki/Intune-Help-Desk)** — Interactive CLI dashboard for helpdesk teams to query Intune devices and view compliance without opening the portal.
 - **[Intune Inspector — fscorrupt](https://github.com/fscorrupt/IntuneInspector)** — WPF GUI that caches every policy type locally and full-text searches across them, including decoded PowerShell script content.
+- **[Endpoint Quorum — Wasaf Abbasi](https://github.com/Abbasi26/endpoint-quorum)** — Read-only PowerShell cross-check of Intune, Entra ID and Defender for Endpoint device state, to find devices the three sources disagree about.
 
 ## Troubleshooting & Debugging
 
@@ -119,6 +120,7 @@ Log readers, diagnostics collectors, and device-level investigation tools.
 - **[IntuneWUTools — markstan](https://github.com/markstan/IntuneWUTools)** — Tools for troubleshooting Windows Update behaviour on Intune-managed clients.
 - **[MHimken Toolbox — MHimken](https://github.com/MHimken/toolbox)** — Collection of endpoint management scripts covering Autopilot diagnostics, ESP inspection, and client-side troubleshooting.
 - **[Where Them Logs App — Scott McAllister](https://wherethemlogs.app/)** — Look up where an app writes its logs on Windows, macOS and Linux, including IME and Company Portal, with paths kept verbatim.
+- **[logsieve — Wasaf Abbasi](https://github.com/Abbasi26/logsieve)** — Builds one timeline from ConfigMgr, Intune and Windows logs, with known error codes and reversible redaction of identifiers.
 
 ## App Packaging & Deployment
 
@@ -143,6 +145,7 @@ Win32 packaging, Winget pipelines, and app delivery automation.
 - **[Deployment Editor — tugich](https://github.com/tugich/DeploymentEditor)** — Click-together sequence builder for PSAppDeployToolkit packages, lowering the scripting barrier for packagers.
 - **[IntuneWin Build and Extract Tool — Damien Van Robaeys](https://www.systanddeploy.com/2023/05/intunewin-build-and-extract-tool-to.html)** — GUI tool to build and, crucially, extract .intunewin packages when you need to inspect what shipped.
 - **[IntuneAppAssigner — Nick Benton](https://github.com/ennnbeee/IntuneAppAssigner)** — Bulk updates or replaces assignments across many Intune applications at once.
+- **[Secure App Factory — Wasaf Abbasi](https://github.com/Abbasi26/secure-app-factory)** — Packages Win32 apps for Intune only when the vendor installer matches its pinned SHA-256 and Authenticode signer.
 
 ## Autopilot & Provisioning
 
