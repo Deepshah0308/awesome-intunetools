@@ -43,7 +43,8 @@
 </header>
 
 <section class="hero">
-  <div class="wrap">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
     <h1>Every Intune tool worth knowing, in <span class="chip-lime">one place</span></h1>
     <p class="lede">128 community-built tools, scripts and utilities for Microsoft Intune administrators. Sorted into 14 categories, reviewed by hand, and checked every week so the links still work.</p>
 
@@ -56,6 +57,31 @@
       <p class="tally" id="tally">Showing all 128 tools</p>
     </div>
 
+    </div>
+
+    <div class="hero-stack" aria-hidden="true">
+<article class="tool">
+<h3>IntuneCD</h3>
+<p class="by">Tobias Almen</p>
+<p class="desc">Backs up, documents, and deploys Intune configuration from source control, making tenant config a reviewable pipeline.</p>
+<p class="meta"><span class="kind kind-repo">Open source</span><span class="src">github.com</span></p>
+</article>
+<article class="tool">
+<h3>Intune Debug Toolkit</h3>
+<p class="by">MSEndpointMgr</p>
+<p class="desc">Toolbox for troubleshooting Intune-managed clients with Win32 re-deploy, Autopilot and ESP inspection, a SyncML viewer, and event log helpers.</p>
+<p class="meta"><span class="kind kind-repo">Open source</span><span class="src">github.com</span></p>
+</article>
+<article class="tool">
+<h3>OpenIntuneBaseline</h3>
+<p class="by">SkipToTheEndpoint</p>
+<p class="desc">Community-driven Intune baseline covering Windows configuration, security, and update policies as importable JSON.</p>
+<p class="meta"><span class="kind kind-repo">Open source</span><span class="src">github.com</span></p>
+</article>
+    </div>
+  </div>
+
+  <div class="wrap">
     <div class="chips" role="group" aria-label="Filter by category">
       <button class="chip on" data-filter="all" type="button">Everything</button>
       <button class="chip" data-filter="device-management" type="button">Device Management <b>12</b></button>
