@@ -6,6 +6,8 @@ on:
     paths:
       - 'data/tools.json'
       - 'scripts/build.py'
+      - 'scripts/linkcheck.py'
+      - 'scripts/selftest.py'
       - 'docs/style.css'
       - 'docs/app.js'
       - '.github/workflows/build.yml'
@@ -22,6 +24,9 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+
+      - name: Self-check
+        run: python scripts/selftest.py
 
       - name: Generate README and website
         run: python scripts/build.py

@@ -21,7 +21,13 @@ REPO = "https://github.com/Deepshah0308/awesome-intunetools"
 OWNER = "Deepshah0308"
 TITLE = "Awesome Intune Tools"
 TAGLINE = "A curated directory of community tools, scripts and utilities for Microsoft Intune administrators."
-TODAY = datetime.date.today().isoformat()
+LINKCHECK = ROOT / "data" / "linkcheck.json"
+REPORT = json.loads(LINKCHECK.read_text(encoding="utf-8")) if LINKCHECK.exists() else None
+
+# Every date on the site comes from the last link check, not from the clock,
+# so rebuilding the same inputs produces the same bytes. Without this the
+# weekly job would commit a diff every Monday whether or not anything moved.
+TODAY = REPORT["date"] if REPORT else datetime.date.today().isoformat()
 
 CATS = DATA["categories"]
 TOOLS = DATA["tools"]
@@ -67,17 +73,23 @@ def masthead():
 </header>"""
 
 
+def rail_note():
+    """Same fact as the status line, in the sidebar's voice."""
+    if REPORT:
+        return (f'Every link checked by an automated weekly run. '
+                f'Last run {REPORT["date"]}.')
+    return "Every link is re-checked by an automated weekly run."
+
+
 def verified_line():
     """The one claim this list has that the others don't, stated plainly.
 
     Reads the last link-check result when CI has written one; until then it
     describes the schedule rather than inventing a date."""
-    report = ROOT / "data" / "linkcheck.json"
-    if report.exists():
-        r = json.loads(report.read_text(encoding="utf-8"))
-        state = "links verified" if not r.get("broken") else "links checked"
-        return (f'<p class="verified">{r["ok"]}/{r["checked"]} {state} '
-                f'\u00b7 {r["date"]}</p>')
+    if REPORT:
+        state = "links verified" if not REPORT.get("broken") else "links checked"
+        return (f'<p class="verified">{REPORT["ok"]}/{REPORT["checked"]} {state} '
+                f'\u00b7 {REPORT["date"]}</p>')
     return (f'<p class="verified">{len(TOOLS)} tools \u00b7 '
             f'every link re-checked weekly by CI</p>')
 
@@ -309,7 +321,7 @@ def build_index():
     <aside class="rail">
       <p class="eyebrow">Categories</p>
       <ul>{nav}</ul>
-      <p class="rail-note">Updated {TODAY}. Every link is verified by an automated weekly check.</p>
+      <p class="rail-note">{rail_note()}</p>
     </aside>
 
     <main id="results">
