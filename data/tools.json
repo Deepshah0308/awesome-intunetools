@@ -969,6 +969,14 @@
       "desc": "Web platform for assignment insight, configuration analysis, rollout assistance, and reporting across tenants."
     },
     {
+      "name": "Intune Lens",
+      "author": "Amine BEN",
+      "url": "https://github.com/Mino69-7/Intune-Lens",
+      "category": "automation",
+      "kind": "repo",
+      "desc": "Reverse assignment lookup: pick an Entra group and see every policy, app and script targeting it."
+    },
+    {
       "name": "Intune Toolkit",
       "author": "Maxime Guillemin",
       "url": "https://github.com/MG-Cloudflow/Intune-Toolkit",

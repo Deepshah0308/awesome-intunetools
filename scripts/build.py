@@ -36,14 +36,6 @@ LOGO = (
     'stroke-width="2.4" stroke-linecap="round"/></svg>'
 )
 
-SQUIGGLE = (
-    '<div class="squiggle"><svg viewBox="0 0 1200 14" preserveAspectRatio="none" aria-hidden="true">'
-    '<path d="M0 7c25-8 50 8 75 0s50-8 75 0 50 8 75 0 50-8 75 0 50 8 75 0 50-8 75 0 50 8 75 0 '
-    '50-8 75 0 50 8 75 0 50-8 75 0 50 8 75 0 50-8 75 0 50 8 75 0 50-8 75 0 50 8 75 0" '
-    'stroke="currentColor" stroke-width="3" fill="none"/></svg></div>'
-)
-
-
 def e(s):
     return html.escape(str(s), quote=True)
 
@@ -75,14 +67,20 @@ def masthead():
 </header>"""
 
 
+def verified_line():
+    """The one claim this list has that the others don't, stated plainly."""
+    return (f'<p class="verified">{len(TOOLS)} tools \u00b7 '
+            f'every link re-checked weekly by CI \u00b7 built {TODAY}</p>')
+
+
 def footer():
-    return f"""{SQUIGGLE}
-<footer class="foot">
+    return f"""<footer class="foot">
   <div class="wrap">
     <div class="foot-grid">
       <div>
         <h3>Awesome Intune Tools</h3>
         <p>{len(TOOLS)} community-built tools for Microsoft Intune administrators. Reviewed by hand, link-checked every week.</p>
+        {verified_line()}
       </div>
       <div>
         <h3>Browse</h3>
@@ -139,7 +137,7 @@ def head(title, desc, path, extra=""):
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 {extra}"""
 
@@ -216,22 +214,19 @@ def card(t):
 </article>"""
 
 
-def hero_card(t):
-    """Same visual as a directory card but linkless: the stack is decorative."""
-    return f"""<article class="tool">
-<h3>{e(t['name'])}</h3>
-<p class="by">{e(t['author'])}</p>
-<p class="desc">{e(t['desc'])}</p>
-<p class="meta"><span class="kind kind-{e(t['kind'])}">{e(KIND_LABEL[t['kind']])}</span><span class="src">{e(host(t['url']))}</span></p>
-</article>"""
-
-
-def hero_stack():
-    by_name = {t["name"]: t for t in TOOLS}
-    picks = [by_name[n] for n in ("IntuneCD", "Intune Debug Toolkit", "OpenIntuneBaseline")
-             if n in by_name]
-    picks += [t for t in TOOLS if t not in picks][:3 - len(picks)]
-    return "\n".join(hero_card(t) for t in picks[:3])
+def category_dist():
+    """What 128 tools actually look like, biggest category first."""
+    rows = sorted(((len(tools_in(c["id"])), c) for c in CATS), reverse=True,
+                  key=lambda r: r[0])
+    top = rows[0][0]
+    items = "\n".join(
+        f'<li><a class="dist-label" href="#{e(c["id"])}">{e(c["name"])}</a>'
+        f'<span class="dist-bar" aria-hidden="true"><i style="width:{n / top:.1%}"></i></span>'
+        f'<span class="dist-n">{n}</span></li>'
+        for n, c in rows)
+    return (f'<figure class="dist">'
+            f'<figcaption>Tools per category</figcaption>'
+            f'<ul>{items}</ul></figure>')
 
 
 def build_index():
@@ -272,7 +267,7 @@ def build_index():
 <section class="hero">
   <div class="wrap hero-grid">
     <div class="hero-copy">
-    <h1>Every Intune tool worth knowing, in <span class="chip-lime">one place</span></h1>
+    <h1>Every Intune tool worth knowing, in <span class="chip-accent">one place</span></h1>
     <p class="lede">{len(TOOLS)} community-built tools, scripts and utilities for Microsoft Intune administrators. Sorted into {len(CATS)} categories, reviewed by hand, and checked every week so the links still work.</p>
 
     <div class="search">
@@ -283,11 +278,12 @@ def build_index():
       </div>
       <p class="tally" id="tally">Showing all {len(TOOLS)} tools</p>
     </div>
+    {verified_line()}
 
     </div>
 
-    <div class="hero-stack" aria-hidden="true">
-{hero_stack()}
+    <div class="hero-visual">
+{category_dist()}
     </div>
   </div>
 
@@ -315,14 +311,21 @@ def build_index():
 </div>
 
 <section class="band-dark">
-  <div class="wrap">
-    <p class="eyebrow eyebrow-dark">Contribute</p>
-    <h2>Know a tool that belongs here?</h2>
-    <p class="sub">Submissions take a minute and land as a GitHub issue for review. Community-built tools that solve a real Intune problem are welcome, whether or not you wrote them.</p>
-    <div class="band-actions">
-      <a class="btn btn-inverted" href="submit.html">Submit a tool</a>
-      <a class="btn btn-ghost-dark" href="sponsor.html">Sponsor the project</a>
+  <div class="wrap band-grid">
+    <div>
+      <p class="eyebrow eyebrow-dark">Contribute</p>
+      <h2>Know a tool that belongs here?</h2>
+      <p class="sub">Submissions land as a GitHub issue and are checked automatically before anyone reads them. Community-built tools that solve a real Intune problem are welcome, whether or not you wrote them.</p>
+      <div class="band-actions">
+        <a class="btn btn-inverted" href="submit.html">Submit a tool</a>
+        <a class="btn btn-ghost-dark" href="sponsor.html">Sponsor the project</a>
+      </div>
     </div>
+    <ul class="checks">
+      <li><span class="n">01</span><span><strong>The link resolves</strong>Dead pages, parked domains and redirects to nowhere are rejected before review.</span></li>
+      <li><span class="n">02</span><span><strong>It looks like a real tool</strong>A repo needs a description, a licence and commits; a hosted tool needs a page that loads.</span></li>
+      <li><span class="n">03</span><span><strong>It isn't already listed</strong>The URL is matched against all {len(TOOLS)} entries, so duplicates close themselves.</span></li>
+    </ul>
   </div>
 </section>
 

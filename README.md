@@ -6,7 +6,7 @@ A curated directory of community tools, scripts and utilities for Microsoft Intu
 
 **Browse it as a searchable website: [deepshah0308.github.io/awesome-intunetools](https://deepshah0308.github.io/awesome-intunetools/)**
 
-128 tools across 14 categories, link-checked weekly. [Submit a tool](https://deepshah0308.github.io/awesome-intunetools/submit.html) · [Sponsor the project](https://deepshah0308.github.io/awesome-intunetools/sponsor.html)
+129 tools across 14 categories, link-checked weekly. [Submit a tool](https://deepshah0308.github.io/awesome-intunetools/submit.html) · [Sponsor the project](https://deepshah0308.github.io/awesome-intunetools/sponsor.html)
 
 ## Contents
 
@@ -25,7 +25,7 @@ A curated directory of community tools, scripts and utilities for Microsoft Intu
 - [Remediations & Scripts](#remediations-scripts) (9)
 - [Backup, Restore & Documentation](#backup-restore-documentation) (4)
 - [Security & Hardening](#security-hardening) (5)
-- [Automation & Assignments](#automation-assignments) (7)
+- [Automation & Assignments](#automation-assignments) (8)
 - [Utilities & Discovery](#utilities-discovery) (7)
 
 ## How to use this list
@@ -266,6 +266,7 @@ CI/CD, assignment auditing, and workflow automation.
 - **[IntuneCD — Tobias Almen](https://github.com/almenscorner/IntuneCD)** — Backs up, documents, and deploys Intune configuration from source control, making tenant config a reviewable pipeline.
 - **[Intune Assignment Checker — Ugur Koc](https://github.com/ugurkocde/IntuneAssignmentChecker)** — Audits Intune assignments for users, groups, and devices, surfacing unassigned policies and empty groups in HTML reports.
 - **[Intune Assistant — Sander Rozemuller](https://intuneassistant.cloud/)** — Web platform for assignment insight, configuration analysis, rollout assistance, and reporting across tenants.
+- **[Intune Lens — Amine BEN](https://github.com/Mino69-7/Intune-Lens)** — Reverse assignment lookup: pick an Entra group and see every policy, app and script targeting it.
 - **[Intune Toolkit — Maxime Guillemin](https://github.com/MG-Cloudflow/Intune-Toolkit)** — PowerShell toolkit with a UI for managing policy assignments and backing up or restoring them.
 - **[Feature Update Controller — MSEndpointMgr](https://github.com/MSEndpointMgr/FeatureUpdateController)** — Centralises control of Windows feature update rollout for Intune-managed devices instead of managing rings by hand.
 - **[DUDE Manager — Simon Skotheimsvik](https://skotheimsvik.no/toolbox-rundown/#dude-manager)** — GUI to deploy and monitor the DUDE automation engine that syncs Intune device groups with Entra user groups.
