@@ -68,9 +68,18 @@ def masthead():
 
 
 def verified_line():
-    """The one claim this list has that the others don't, stated plainly."""
+    """The one claim this list has that the others don't, stated plainly.
+
+    Reads the last link-check result when CI has written one; until then it
+    describes the schedule rather than inventing a date."""
+    report = ROOT / "data" / "linkcheck.json"
+    if report.exists():
+        r = json.loads(report.read_text(encoding="utf-8"))
+        state = "links verified" if not r.get("broken") else "links checked"
+        return (f'<p class="verified">{r["ok"]}/{r["checked"]} {state} '
+                f'\u00b7 {r["date"]}</p>')
     return (f'<p class="verified">{len(TOOLS)} tools \u00b7 '
-            f'every link re-checked weekly by CI \u00b7 built {TODAY}</p>')
+            f'every link re-checked weekly by CI</p>')
 
 
 def footer():
@@ -220,7 +229,7 @@ def category_dist():
                   key=lambda r: r[0])
     top = rows[0][0]
     items = "\n".join(
-        f'<li><a class="dist-label" href="#{e(c["id"])}">{e(c["name"])}</a>'
+        f'<li><a class="dist-label" href="#{e(c["id"])}">{e(c.get("short", c["name"]))}</a>'
         f'<span class="dist-bar" aria-hidden="true"><i style="width:{n / top:.1%}"></i></span>'
         f'<span class="dist-n">{n}</span></li>'
         for n, c in rows)

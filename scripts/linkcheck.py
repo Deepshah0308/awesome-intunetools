@@ -89,6 +89,16 @@ def main():
     healthy = len(results) - len(confirmed)
     print(f"\nChecked {len(results)} links. {healthy} healthy.")
 
+    # The site states this run as its quality claim, so record it either way.
+    (ROOT / "data" / "linkcheck.json").write_text(
+        json.dumps({
+            "date": time.strftime("%Y-%m-%d", time.gmtime()),
+            "checked": len(results),
+            "ok": healthy,
+            "broken": [t["url"] for t, _, _ in confirmed],
+        }, indent=2) + "\n",
+        encoding="utf-8")
+
     for tool, status, err in confirmed:
         label = status if status else "connection error"
         print(f"  BROKEN [{label}] {tool['name']} -> {tool['url']} {err}")

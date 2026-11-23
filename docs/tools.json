@@ -8,12 +8,14 @@
     {
       "id": "troubleshooting",
       "name": "Troubleshooting & Debugging",
-      "blurb": "Log readers, diagnostics collectors, and device-level investigation tools."
+      "blurb": "Log readers, diagnostics collectors, and device-level investigation tools.",
+      "short": "Troubleshooting"
     },
     {
       "id": "packaging",
       "name": "App Packaging & Deployment",
-      "blurb": "Win32 packaging, Winget pipelines, and app delivery automation."
+      "blurb": "Win32 packaging, Winget pipelines, and app delivery automation.",
+      "short": "App Packaging"
     },
     {
       "id": "autopilot",
@@ -23,7 +25,8 @@
     {
       "id": "baselines",
       "name": "Baselines & Configuration as Code",
-      "blurb": "Ready-to-import baselines and declarative tenant configuration."
+      "blurb": "Ready-to-import baselines and declarative tenant configuration.",
+      "short": "Baselines & Config"
     },
     {
       "id": "apple",
@@ -53,7 +56,8 @@
     {
       "id": "backup",
       "name": "Backup, Restore & Documentation",
-      "blurb": "Tenant backup, drift detection, migration, and auto-generated documentation."
+      "blurb": "Tenant backup, drift detection, migration, and auto-generated documentation.",
+      "short": "Backup & Docs"
     },
     {
       "id": "security",

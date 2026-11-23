@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   linkcheck:
@@ -18,4 +18,19 @@ jobs:
           python-version: '3.12'
 
       - name: Verify every tool URL resolves
+        id: check
         run: python scripts/linkcheck.py
+
+      # The site states this run as its quality claim, so publish the result
+      # whether or not a link broke. Rebuilding here rather than relying on a
+      # push trigger: commits made with GITHUB_TOKEN do not start workflows.
+      - name: Publish the result
+        if: always()
+        run: |
+          python scripts/build.py
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/linkcheck.json README.md docs
+          git diff --quiet --cached && exit 0
+          git commit -m "Record weekly link check"
+          git push

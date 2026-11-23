@@ -358,7 +358,7 @@ a { color: var(--link); }
 }
 .dist ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
 .dist li {
-  display: grid; grid-template-columns: 168px minmax(0, 1fr) 24px;
+  display: grid; grid-template-columns: 150px minmax(0, 1fr) 24px;
   align-items: center; gap: var(--md);
 }
 .dist-label {
@@ -411,7 +411,7 @@ a { color: var(--link); }
   .band-grid { grid-template-columns: minmax(0, 1fr); gap: 40px; }
 }
 @media (max-width: 767px) {
-  .dist li { grid-template-columns: 124px minmax(0, 1fr) 24px; }
+  .dist li { grid-template-columns: 112px minmax(0, 1fr) 24px; }
 }
 
 /* one swipeable row beats fourteen stacked chips on a phone */
